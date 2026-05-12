@@ -1,0 +1,39 @@
+h1 {
+    color: #1a1a1a;
+    text-align: center;
+}
+p {
+    color: #1a1a1a;
+}
+nav {
+    
+    text-align: center;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+header {
+    background-color: black;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+}
+img {
+    margin-top: 10px;
+    margin-left: 200px;
+}
+header img {
+    width: 200px;
+}
+header nav {
+    float: right;
+}
+header nav a {
+    color: #ffffff;
+    margin-left: 20px;
+    text-decoration: none;
+}
