@@ -15,10 +15,8 @@
     color: #fff;
     font-size: 24px;
 }
-.col-md-3 text-star div {
-    align-height: 1.2;
-}
 .info-contato {
+    line-height: 1.2;
     padding-left: 70px;
 }
 .info-contato span.d-block:first-child {
