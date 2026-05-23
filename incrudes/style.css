@@ -11,25 +11,19 @@
 .busca {
     width: 100%;
 }
-.contato  {
-    color: #FFC107;
-    font-size: 40px;
+.btn-contato {
+    color: #25D366;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 25px;
+}
+.btn-contato:hover {
+    transition: color 0.3s;
+    color: #128C7E;
 }
 .info-contato {
     line-height: 1.2;
     padding-left: 70px;
-}
-.info-contato span.d-block:first-child {
-    font-size: 25px;
-    color: #fff;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-}
-.info-contato span.d-block:last-child {
-    font-size: 25px;
-    color: #fff;
-    font-weight: bold;
-    margin-top: 2px;
 }
 .menu-nav {
     height: 70px;

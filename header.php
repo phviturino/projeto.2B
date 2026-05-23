@@ -17,7 +17,7 @@
 
     <div class="col-md-3 col-sm-4">
     <a class="logo" href="index.php">
-      <img src="img/lojaicone.jpeg" alt="icone" class="logo-img">
+      <img src="../img/lojaicone.jpeg" alt="icone" class="logo-img">
     </a>
 </div>
 
@@ -31,12 +31,11 @@
     <div class="col-md-3 d-none d-md-block">
       <div class="d-inline-flex align-items-center info-contato">
         <div class="contato me-2">
+            <a href="contato.php" class="btn-contato">
           <i class="bi bi-whatsapp"></i>
-        </div>
-        <div class="d-flex flex-column">
-        <span class="d-block">Fale</span>
-        <span class="d-block">Conosco</span>
-</div>
+          Fale conosco
+          </a>
+        </div>z
   </div>
   </div>
   </div>
@@ -54,19 +53,3 @@
   </ul>
 </div>
 </header>
-
-    <main>
-        <div class="container-fluid p-0">
-          <div class="row g-0">
-            <div class="col-12">
-              <img src="img/banner.png" alt="banner" class="img-fluid w-100">
-            </div>
-          </div>
-        </div>
-        <div class="container mt-5">
-            <h1>Bem-vindo à Saúde Animal Agro e Vet</h1>
-            <p>Encontre os melhores produtos para o cuidado dos seus animais de estimação e para a agricultura.</p>
-        </div>
-      </main>
-</body>
-</html>
