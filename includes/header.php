@@ -17,7 +17,7 @@
 
     <div class="col-md-3 col-sm-4">
     <a class="logo" href="index.php">
-      <img src="../img/lojaicone.jpeg" alt="icone" class="logo-img">
+      <img src="img/lojaicone.jpeg" alt="icone" class="logo-img">
     </a>
 </div>
 
@@ -35,7 +35,7 @@
           <i class="bi bi-whatsapp"></i>
           Fale conosco
           </a>
-        </div>z
+        </div>
   </div>
   </div>
   </div>
