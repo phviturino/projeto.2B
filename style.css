@@ -42,9 +42,10 @@ h1, p{
     text-align: center;
     font-size: 26px;
 }
-.logo-footer {
-    width: 200px;
+.card-img-top {
+    height: 400px;
+    object-fit: cover;
 }
-.descricao {
-    font-size: 25px;
+.card {
+    height: 100%;
 }
