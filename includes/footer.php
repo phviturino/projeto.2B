@@ -10,6 +10,10 @@
         <p class="text-secondary">Sua loja completa, dedicada ao cuidado, desde o seu pet até sua fazenda. 4 lojas oferecendo o melhor a nossos clientes.</p>
     </div>
     </div>
+
+     <div class="container text-center my-5">
+            <a href="#" class="btn btn-outline-light">Conheça nossa história</a>
+        </div>
     
     <hr class="border-secondary">
 

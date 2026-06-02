@@ -26,6 +26,9 @@
     padding-left: 70px;
 }
 .menu-nav {
+    hover {
+        background-color: #f8f9fa;
+    }
     height: 70px;
     background-color: #fff;
     padding: 12px 0;
