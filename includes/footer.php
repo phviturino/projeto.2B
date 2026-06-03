@@ -11,10 +11,6 @@
     </div>
     </div>
 
-     <div class="container text-center my-5">
-            <a href="#" class="btn btn-outline-light">Conheça nossa história</a>
-        </div>
-    
     <hr class="border-secondary">
 
     <!--lojas-->

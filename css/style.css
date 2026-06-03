@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .navbar-dark {
     background-color: #000000;
     padding: 16px 0;
@@ -51,4 +57,8 @@ h1, p{
 }
 .card {
     height: 100%;
+}
+.foto {
+    margin-left: 50px;
+    height: 700px;
 }
