@@ -43,13 +43,15 @@
 </nav>
 <div class="menu-nav">
   <ul class="d-flex list-unstyled mb-0 justify-content-center">
+    <li><a href="#">Pecuária</a></li>
     <li><a href="#">Pet</a></li>
-    <li><a href="#">Agro</a></li>
-    <li><a href="#">Veterinária</a></li>
+    <li><a href="#">Medicamentos</a></li>
     <li><a href="#">EPIs</a></li>
-    <li><a href="#">Rações</a></li>
+    <li><a href="#">Jardinagem</a></li>
     <li><a href="#">Aventura e Lazer</a></li>
-    <li><a href="#">Equinos</a></li>
+    <li><a href="#">equipamentos</a></li>
+    <li><a href="#">Vestuário</a></li>
+    <li><a href="#">Outros</a></li>
   </ul>
 </div>
 </header>
