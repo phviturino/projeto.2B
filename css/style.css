@@ -62,3 +62,6 @@ h1, p{
     margin-left: 50px;
     height: 700px;
 }
+footer p{
+    text-align: left !important;
+}
