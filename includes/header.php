@@ -43,15 +43,15 @@
 </nav>
 <div class="menu-nav">
   <ul class="d-flex list-unstyled mb-0 justify-content-center">
-    <li><a href="#">Pecuária</a></li>
-    <li><a href="#">Pet</a></li>
-    <li><a href="#">Medicamentos</a></li>
-    <li><a href="#">EPIs</a></li>
-    <li><a href="#">Jardinagem</a></li>
-    <li><a href="#">Aventura e Lazer</a></li>
-    <li><a href="#">equipamentos</a></li>
-    <li><a href="#">Vestuário</a></li>
-    <li><a href="#">Outros</a></li>
+    <li><a href="produtos.php">Pecuária</a></li>
+    <li><a href="produtos.php">Pet</a></li>
+    <li><a href="produtos.php">Medicamentos</a></li>
+    <li><a href="produtos.php">EPIs</a></li>
+    <li><a href="produtos.php">Jardinagem</a></li>
+    <li><a href="produtos.php">Aventura e Lazer</a></li>
+    <li><a href="produtos.php">equipamentos</a></li>
+    <li><a href="produtos.php">Vestuário</a></li>
+    <li><a href="produtos.php">Outros</a></li>
   </ul>
 </div>
 </header>

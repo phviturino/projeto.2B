@@ -1,5 +1,5 @@
 <?php
-$servername = "10.10.93.16"; // IP do Servidor XAMPP
+$servername = "localhost"; // IP do Servidor XAMPP
 $username = "pedro";
 $password = "140823pl";
 $dbname = "saudeanimal";

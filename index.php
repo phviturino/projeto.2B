@@ -34,7 +34,7 @@
               <div class="card-body">
                   <p class="text-muted small"><?= $produto['categoria'] ?></p>
                  <h5 class="card-title"><?= $produto['nome'] ?></h5>
-                  <a href="#" class="btn btn-dark btn-sm">Ver produtos</a>
+                  <a href="produtos.php" class="btn btn-dark btn-sm">Ver produtos</a>
               </div>
         </div>
         </div>
