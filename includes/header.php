@@ -41,17 +41,29 @@
   </div>
 </div>
 </nav>
+
+<div class="menu-nav text-center mb-3">
+  <div class="mb-3">
+    <a class="btn btn-outline-dark btn-sm fw-bold px-4" href="produtos.php">
+      VEJA NOSSOS PRODUTOS
+    </a>
+  </div>
+
+  <hr class="w-50 mx-auto my-3 text-secondary">
+
 <div class="menu-nav">
-  <ul class="d-flex list-unstyled mb-0 justify-content-center">
-    <li><a href="produtos.php">Pecuária</a></li>
-    <li><a href="produtos.php">Pet</a></li>
-    <li><a href="produtos.php">Medicamentos</a></li>
-    <li><a href="produtos.php">EPIs</a></li>
-    <li><a href="produtos.php">Jardinagem</a></li>
-    <li><a href="produtos.php">Aventura e Lazer</a></li>
-    <li><a href="produtos.php">equipamentos</a></li>
-    <li><a href="produtos.php">Vestuário</a></li>
-    <li><a href="produtos.php">Outros</a></li>
+  <ul class="nav justify-content-center d-flex list-unstyled mb-0 ">
+    
+    <li><a class="nav-link" href="produtos.php?categoria=8">Pecuária</a></li>
+    <li><a class="nav-link" href="produtos.php?categoria=9">Pet</a></li>
+    <li><a class="nav-link" href="produtos.php?categoria=10">Medicamentos</a></li>
+    <li><a class="nav-link" href="produtos.php?categoria=11">EPIs</a></li>
+    <li><a class="nav-link" href="produtos.php?categoria=12">Jardinagem</a></li>
+    <li><a class="nav-link" href="produtos.php?categoria=13">Aventura e Lazer</a></li>
+    <li><a class="nav-link" href="produtos.php?categoria=14">equipamentos</a></li>
+    <li><a class="nav-link" href="produtos.php?categoria=15">Vestuário</a></li>
+    <li><a class="nav-link" href="produtos.php?categoria=16">Outros</a></li>
   </ul>
 </div>
+
 </header>

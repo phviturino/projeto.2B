@@ -2,30 +2,37 @@
     require_once __DIR__ . '/includes/conexao.php';
 
     //armazenar os produtos
+    $todos_os_produto = array();
+
     $produto = array();
     $titulo_pagina = "Todos os nossos produto";
 
     //conexão com o banco
     if($conn) {
+        $sql = "SELECT * FROM produto";
+        $resultado = mysqli_query($conn, $sql);
+
+        if ($resultado && mysqli_num_rows($resultado) > 0) {
+            while ($linha = mysqli_fetch_assoc($resultado)) {
+                $todos_os_produto[] = $linha;
+            }
+        }
 
     if (isset($_GET['categoria']) && !empty($_GET['categoria'])) {
 
     $_catfiltrada = (int)$_GET['categoria'];
-
-    $sql = "SELECT * FROM produto WHERE id_categoria = $_catfiltrada";
     $titulo_pagina = 'Produtos da Categoria: ' . $_catfiltrada;
-    }else{
-        $sql = "SELECT * FROM produto";
-    }
-    $resultado = mysqli_query($conn, $sql);
 
-    if ($resultado && mysqli_num_rows($resultado) > 0) {
-        while ($linha = mysqli_fetch_assoc($resultado)) {
-            $produto[] = $linha; 
-            }
+    foreach ($todos_os_produto as $iten) {
+        if ($iten['id_categoria'] == $_catfiltrada) {
+            $produto[] = $iten;
         }
     }
-    ?>
+}else {
+    $produto = $todos_os_produto;
+    }
+}
+?>
 
 <?php include __DIR__ . '/includes/header.php';?>
 
@@ -66,8 +73,8 @@
                                 Categoria #<?php echo $linha_produto['id_categoria']; ?>
                             </p>
 
-                            <p class="card-text font-weight-bold fs-5 mt-auto mb-2 preco-produto">
-                                R$ <?php echo number_format($linha_produto['preco'], 2, ',', '.'); ?>
+                            <p class="card-text font-weight-bold fs-5 mt-auto mb-2 preço-produto">
+                                R$ <?php echo number_format($linha_produto['preço'], 2, ',', '.'); ?>
                             </p>
 
                             <a href="produto-detalhes.php?id=<?php echo $linha_produto['id']; ?>" class="btn btn-outline-light btn-sm w-100">Ver Produtos</a>
