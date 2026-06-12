@@ -65,3 +65,21 @@ h1, p{
 footer p{
     text-align: left !important;
 }
+.container-foto-produto {
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fff;
+}
+.foto-produto {
+    width: 100%;
+    height: 100%;
+    object-index: center;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.card:hover .foto-produto {
+    transform: scale(1.05);
+}
