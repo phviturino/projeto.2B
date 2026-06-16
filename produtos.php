@@ -1,37 +1,57 @@
 <?php
     require_once __DIR__ . '/includes/conexao.php';
 
+function filtrarPorCategoria ($listaProdutos, $idCategoria) {
+                if(empty($listaProdutos) ||$idCategoria <= 0) {
+                 return $listaProdutos;
+                }
+        
+                $produtosFiltrados = array();
+                foreach ($listaProdutos as $item) {
+                if($item['id_categoria'] == $idCategoria) {
+                $produtosFiltrados[] = $item;
+                }
+            }
+
+        return $produtosFiltrados;
+}
+
+function calcularDesconto($precoOriginal) {
+        if (!is_numeric($precoOriginal) || $precoOriginal <= 0) {
+        return 0.00;
+        }
+
+        $desconto = $precoOriginal * 0.05;
+         return $precoOriginal - $desconto;
+}
+
+
     //armazenar os produtos
     $todos_os_produto = array();
-
     $produto = array();
     $titulo_pagina = "Todos os nossos produto";
 
     //conexão com o banco
-    if($conn) {
+    if($conexao) {
         $sql = "SELECT * FROM produto";
-        $resultado = mysqli_query($conn, $sql);
+        $resultado = mysqli_query($conexao, $sql);
 
-        if ($resultado && mysqli_num_rows($resultado) > 0) {
+            if ($resultado && mysqli_num_rows($resultado) > 0) {
             while ($linha = mysqli_fetch_assoc($resultado)) {
-                $todos_os_produto[] = $linha;
+            $todos_os_produto[] = $linha;
             }
-        }
+            }
 
-    if (isset($_GET['categoria']) && !empty($_GET['categoria'])) {
+            if (isset($_GET['categoria']) && !empty($_GET['categoria'])) {
+            $_catfiltrada = (int)$_GET['categoria'];
+            $titulo_pagina = "Catálogo de Produtos: ";
 
-    $_catfiltrada = (int)$_GET['categoria'];
-    $titulo_pagina = 'Produtos da Categoria: ' . $_catfiltrada;
-
-    foreach ($todos_os_produto as $iten) {
-        if ($iten['id_categoria'] == $_catfiltrada) {
-            $produto[] = $iten;
-        }
+    $produto = filtrarPorCategoria($todos_os_produto, $_catfiltrada);
+    }else {
+        $produto = $todos_os_produto;
     }
-}else {
-    $produto = $todos_os_produto;
-    }
-}
+ }
+
 ?>
 
 <?php include __DIR__ . '/includes/header.php';?>
@@ -39,24 +59,21 @@
 <main class="container mt-5 mb-5">
     
     <h2 class="text-center mb-5 text-dark catalogo-titulo">
-        <?php echo $titulo_pagina; ?>
+    <?php echo $titulo_pagina; ?>
     </h2>
     
     <div class="row row-cols-1 row-cols-md-4 g-4">
         
-        <?php 
-        
-        if (empty($produto)): 
-        ?>
-            <div class="col-12 text-center my-5">
-                <p class="text-muted">Nenhum produto cadastrado encontrado.</p>
-            </div>
+        <?php if (empty($produto)): ?>
 
-        <?php 
-        
-        else: 
-            foreach ($produto as $linha_produto): 
-        ?>
+                <div class="col-12 text-center my-5">
+                <p class="text-muted">Nenhum produto cadastrado encontrado.</p>
+                </div>
+
+        <?php else: ?>
+
+            <?php foreach ($produto as $linha_produto): ?>
+
                 <div class="col">
                     <div class="card h-100 shadow border-0 bg-dark text-white">
 
@@ -66,7 +83,7 @@
 
                         <div class="card-body d-flex flex-column text-center">
                             <h5 class="card-title fs-6 text-uppercase mb-2 nome-produto">
-                                <?php echo $linha_produto['nome']; ?>
+                            <?php echo $linha_produto['nome']; ?>
                             </h5>
 
                             <p class="card-text text-secondary small mb-3">
@@ -77,15 +94,17 @@
                                 R$ <?php echo number_format($linha_produto['preço'], 2, ',', '.'); ?>
                             </p>
 
+                            <p class="text-success-small mb-3 fw-bold">
+                                ou R$ <?php echo number_format(calcularDesconto($linha_produto['preço']), 2, ',', '.'); ?> no PIX
+                            </p>
+
                             <a href="produto-detalhes.php?id=<?php echo $linha_produto['id']; ?>" class="btn btn-outline-light btn-sm w-100">Ver Produtos</a>
                         </div>
                     </div>
                 </div>
-        <?php 
+        <?php  endforeach; ?>
+        <?php endif; ?>
         
-            endforeach; 
-        endif; 
-        ?>
         
     </div>
 </main>

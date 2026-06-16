@@ -41,7 +41,7 @@
         
           <?php endforeach; ?>
           <div class="container text-center my-5">
-            <a href="#" class="btn btn-outline-dark">Ver mais produtos</a>
+            <a href="produtos.php" class="btn btn-outline-dark">Ver mais produtos</a>
             </div>
             <div class="container my-5">
               <div class="row align-itens-center">

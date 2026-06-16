@@ -4,10 +4,10 @@ $username = "pedro";
 $password = "140823pl";
 $dbname = "saudeanimal";
 // Criar conexão usando MySQLi
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conexao = new mysqli($servername, $username, $password, $dbname);
 // Verificar conexão
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
+if ($conexao->connect_error) {
+    die("Falha na conexão: " . $conexao->connect_error);
 }
 echo "Conectado com sucesso ao banco externo!";
 ?>

@@ -51,18 +51,23 @@
 
   <hr class="w-50 mx-auto my-3 text-secondary">
 
-<div class="menu-nav">
+<div class="menu-nav text-center mb-5">
+
+<?php
+    $cat_atual = isset($_GET['categoria']) ? (int)$_GET['categoria'] : 0;
+?>
+
   <ul class="nav justify-content-center d-flex list-unstyled mb-0 ">
     
-    <li><a class="nav-link" href="produtos.php?categoria=8">Pecuária</a></li>
-    <li><a class="nav-link" href="produtos.php?categoria=9">Pet</a></li>
-    <li><a class="nav-link" href="produtos.php?categoria=10">Medicamentos</a></li>
-    <li><a class="nav-link" href="produtos.php?categoria=11">EPIs</a></li>
-    <li><a class="nav-link" href="produtos.php?categoria=12">Jardinagem</a></li>
-    <li><a class="nav-link" href="produtos.php?categoria=13">Aventura e Lazer</a></li>
-    <li><a class="nav-link" href="produtos.php?categoria=14">equipamentos</a></li>
-    <li><a class="nav-link" href="produtos.php?categoria=15">Vestuário</a></li>
-    <li><a class="nav-link" href="produtos.php?categoria=16">Outros</a></li>
+    <li><a class="nav-link <?= ($cat_atual == 8) ? 'active' : '' ?>" href="produtos.php?categoria=8">Pecuária</a></li>
+    <li><a class="nav-link <?= ($cat_atual == 9) ? 'active' : '' ?>" href="produtos.php?categoria=9">Pet</a></li>
+    <li><a class="nav-link <?= ($cat_atual == 10) ? 'active' : '' ?>" href="produtos.php?categoria=10">Medicamentos</a></li>
+    <li><a class="nav-link <?= ($cat_atual == 11) ? 'active' : '' ?>" href="produtos.php?categoria=11">EPIs</a></li>
+    <li><a class="nav-link <?= ($cat_atual == 12) ? 'active' : '' ?>" href="produtos.php?categoria=12">Jardinagem</a></li>
+    <li><a class="nav-link <?= ($cat_atual == 13) ? 'active' : '' ?>" href="produtos.php?categoria=13">Aventura e Lazer</a></li>
+    <li><a class="nav-link <?= ($cat_atual == 14) ? 'active' : '' ?>" href="produtos.php?categoria=14">equipamentos</a></li>
+    <li><a class="nav-link <?= ($cat_atual == 15) ? 'active' : '' ?>" href="produtos.php?categoria=15">Vestuário</a></li>
+    <li><a class="nav-link <?= ($cat_atual == 16) ? 'active' : '' ?>" href="produtos.php?categoria=16">Outros</a></li>
   </ul>
 </div>
 
