@@ -73,7 +73,7 @@ footer p{
     overflow: hidden;
     background-color: #fff;
 }
-.foto-produto {
+.foto-produto .produto-destaque {
     width: 100%;
     height: 100%;
     object-index: center;
@@ -82,4 +82,25 @@ footer p{
 }
 .card:hover .foto-produto {
     transform: scale(1.05);
+}
+.destaque-vendas {
+    letter-spacing: 1px;
+}
+.imagem-destaque {
+    object-fit: contain;
+    max-height: 100%;
+}
+.texto-destaque {
+    background-color: #212529 !important;
+}
+.info-produtos {
+    min-height: 44px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+.detalhes-destaque {
+    border: none;
+    background-color: #198754;
+    font-size: 13px;
+    letter-spacing: 0.5px;
 }

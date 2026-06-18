@@ -81,7 +81,7 @@ function calcularDesconto($precoOriginal) {
                             <img src="img/<?php echo $linha_produto['imagem']; ?>" class="img-fluid foto-produto" alt="<?php echo $linha_produto['nome']; ?>">
                         </div>
 
-                        <div class="card-body d-flex flex-column text-center">
+                        <div class="card-body d-flex flex-column text-center rounded-pill">
                             <h5 class="card-title fs-6 text-uppercase mb-2 nome-produto">
                             <?php echo $linha_produto['nome']; ?>
                             </h5>
@@ -98,7 +98,7 @@ function calcularDesconto($precoOriginal) {
                                 ou R$ <?php echo number_format(calcularDesconto($linha_produto['preço']), 2, ',', '.'); ?> no PIX
                             </p>
 
-                            <a href="produto-detalhes.php?id=<?php echo $linha_produto['id']; ?>" class="btn btn-outline-light btn-sm w-100">Ver Produtos</a>
+                            <a href="produto-detalhes.php?id=<?php echo $linha_produto['id']; ?>" class="btn btn-success btn-sm w-100 fw-bold py-2 text-uppercase">Ver Produtos</a>
                         </div>
                     </div>
                 </div>

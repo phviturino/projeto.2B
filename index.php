@@ -1,12 +1,13 @@
 <?php include 'includes/header.php';?>
     <main>
-        <div class="container-fluid p-0">
-          <div class="row g-0">
-            <div class="col-12">
-              <img src="img/banner.png" alt="banner" class="img-fluid w-100 h-75">
-              <div class="container mt-5">
+      <div class="container mt-5">
             <h1>Bem-vindo à Saúde Animal Agro e Vet</h1>
             <p>Encontre os melhores produtos para o cuidado dos seus animais de estimação e para a agricultura.</p>
+      </div>
+        <div class="container-fluid p-0 position-relative">
+          <div class="row g-0">
+            <div class="col-12">
+              <img src="img/banner.png" alt="banner" class="img-fluid w-100 h-75 rounded-2">
         </div>
         </div>
         </div>
@@ -24,25 +25,45 @@
         ["nome" => "Benefit Petiscos", "categoria" => "Equinos", "img" => "8.jpeg"]
         ];
         ?>
-       <div class="container mt-5">
-          <h2>Mais vendidos</h2>
-          <div class="row">
-        <?php foreach ($produtos as $produto): ?>
-             <div class="col-md-3 mb-4">
-              <div class="card">
-              <img src="img/<?=$produto["img"] ?>" class="card-img-top" alt="<?= $produto['nome'] ?>">
-              <div class="card-body">
-                  <p class="text-muted small"><?= $produto['categoria'] ?></p>
-                 <h5 class="card-title"><?= $produto['nome'] ?></h5>
-                  <a href="produtos.php" class="btn btn-dark btn-sm">Ver produtos</a>
-              </div>
+
+       <div class="container my-5">
+
+        <div class="d-flex align-itens-center justify-content-center mb-4 border-bottom pb-3">
+          <h2 class="fw-bold m-0  fs-3 text-dark text-uppercase destaque-vendas">🔥 Mais vendidos</h2>
         </div>
-        </div>
-        
-          <?php endforeach; ?>
-          <div class="container text-center my-5">
-            <a href="produtos.php" class="btn btn-outline-dark">Ver mais produtos</a>
+        <div class="row g-4">
+          <?php foreach ($produtos as $produto): ?>
+            <div class="col-12 col-sm-6 col-md-3">
+
+            <div class="card h-100 border-0 shadow-sm rounded-0 overflow-hidden">
+
+            <div class="box-foto-produto p-3 bg-white produto-destaque">
+              <img src="img/<?=$produto['img'] ?>" class="img-fluid imagem-destaque" alt="<?=$produto['nome'] ?>">
             </div>
+
+            <div class="card-body bg-dark text-white text-center d-flex flex-collum justify-content-between p-3 texto-destaque">
+              <div class="info-produtos mb-3">
+              <h6 class="card-title text-white fw-bold text-uppercase mb-1">
+              <?=$produto['nome'] ?>
+              </h6>
+              <span class="text-secondary small d-block fs-12">
+                <?=$produto['categoria'] ?>
+          </span>
+          </div>
+
+          <a href="produtos.php" class="btn btn-success w-100 fw-bold py-2 rounded-1 text-uppercase mb-0 detalhes-destaque">Ver Produtos</a>
+          </div>
+          </div>
+          </div>
+          <?php endforeach; ?>
+
+          </div>
+          <div class="text-center my-5">
+            <a href="produtos.php" class="btn btn-outiline-dark px-5 py-2 fw-bold text-uppercase">Ver mais produtos</a> 
+          </div>
+          </div>
+
+
             <div class="container my-5">
               <div class="row align-itens-center">
 
@@ -72,8 +93,8 @@
         </div>
 
                   </div>
-                  <div class="col-md-6 ">
-                    <img class="img-fluid foto" src="img/colaboradores.jpeg" alt="Colaboradores">
+                  <div class="col-md-6">
+                    <img class="img-fluid foto rounded-5" src="img/colaboradores.jpeg" alt="Colaboradores">
                 </div>
 
                 

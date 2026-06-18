@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
+  <?php 
+  $pagina_atual = basename($_SERVER['PHP_SELF']);
+  ?>
 <header>
     <nav class="navbar-dark">
   <div class="container-fluid"> 
@@ -22,9 +25,9 @@
 </div>
 
 <div class="col-md-6 col-sm-8">
-    <form class="d-flex busca" role="search">
-      <input class="form-control me-2 w-100" type="search" placeholder="Search" aria-label="Search"/>
-      <button class="btn btn-outline-success" type="submit">Search</button>
+    <form class="d-flex busca" role="buscar">
+      <input class="form-control me-2 w-100" type="search" placeholder="Buscar" aria-label="Buscar"/>
+      <button class="btn btn-outline-success" type="submit">Buscar</button>
     </form>
     </div>
 
@@ -44,14 +47,15 @@
 
 <div class="menu-nav text-center mb-3">
   <div class="mb-3">
-    <a class="btn btn-outline-dark btn-sm fw-bold px-4" href="produtos.php">
-      VEJA NOSSOS PRODUTOS
+    <a href="produtos.php" class="btn btn-warning btn-lg fw-bold px-5 py-3 text-dark text-uppercase rounded-pill shadow-lg  btn-banner-home">
+      🛒 VEJA NOSSO CATÁLOGO 
     </a>
   </div>
 
   <hr class="w-50 mx-auto my-3 text-secondary">
+</div> <?php if ($pagina_atual !== 'index.php'): ?>
 
-<div class="menu-nav text-center mb-5">
+<div class="menu-nav text-center mb-5"> 
 
 <?php
     $cat_atual = isset($_GET['categoria']) ? (int)$_GET['categoria'] : 0;
@@ -60,7 +64,7 @@
   <ul class="nav justify-content-center d-flex list-unstyled mb-0 ">
     
     <li><a class="nav-link <?= ($cat_atual == 8) ? 'active' : '' ?>" href="produtos.php?categoria=8">Pecuária</a></li>
-    <li><a class="nav-link <?= ($cat_atual == 9) ? 'active' : '' ?>" href="produtos.php?categoria=9">Pet</a></li>
+    <li><a class="nav-link <?= ($cat_atual == 9) ? 'active' : '' ?>" href="produtos.php?   categoria=9">Pet</a></li>
     <li><a class="nav-link <?= ($cat_atual == 10) ? 'active' : '' ?>" href="produtos.php?categoria=10">Medicamentos</a></li>
     <li><a class="nav-link <?= ($cat_atual == 11) ? 'active' : '' ?>" href="produtos.php?categoria=11">EPIs</a></li>
     <li><a class="nav-link <?= ($cat_atual == 12) ? 'active' : '' ?>" href="produtos.php?categoria=12">Jardinagem</a></li>
@@ -70,5 +74,7 @@
     <li><a class="nav-link <?= ($cat_atual == 16) ? 'active' : '' ?>" href="produtos.php?categoria=16">Outros</a></li>
   </ul>
 </div>
+
+<?php endif;?>
 
 </header>
