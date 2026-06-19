@@ -76,8 +76,8 @@ footer p{
 .foto-produto .produto-destaque {
     width: 100%;
     height: 100%;
-    object-index: center;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.3s ease;
 }
 .card:hover .foto-produto {
@@ -86,21 +86,9 @@ footer p{
 .destaque-vendas {
     letter-spacing: 1px;
 }
-.imagem-destaque {
-    object-fit: contain;
-    max-height: 100%;
+.menu-nav :hover {
+    background-color: #f8f9fa;
 }
-.texto-destaque {
-    background-color: #212529 !important;
-}
-.info-produtos {
-    min-height: 44px;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-}
-.detalhes-destaque {
-    border: none;
-    background-color: #198754;
-    font-size: 13px;
-    letter-spacing: 0.5px;
+.nome-produto {
+    min-height: 38px;
 }

@@ -31,33 +31,32 @@
         <div class="d-flex align-itens-center justify-content-center mb-4 border-bottom pb-3">
           <h2 class="fw-bold m-0  fs-3 text-dark text-uppercase destaque-vendas">🔥 Mais vendidos</h2>
         </div>
+
         <div class="row g-4">
           <?php foreach ($produtos as $produto): ?>
             <div class="col-12 col-sm-6 col-md-3">
+            <div class="card h-100 border-0 shadow bg-dark  text-white">
 
-            <div class="card h-100 border-0 shadow-sm rounded-0 overflow-hidden">
-
-            <div class="box-foto-produto p-3 bg-white produto-destaque">
-              <img src="img/<?=$produto['img'] ?>" class="img-fluid imagem-destaque" alt="<?=$produto['nome'] ?>">
+            <div class="p-3 bg-white d-flex align-items-center justify-content-center container-foto-produto">
+              <img src="img/<?=$produto['img'] ?>" class="img-fluid foto-produto" alt="<?=$produto['nome'] ?>">
             </div>
 
-            <div class="card-body bg-dark text-white text-center d-flex flex-collum justify-content-between p-3 texto-destaque">
-              <div class="info-produtos mb-3">
-              <h6 class="card-title text-white fw-bold text-uppercase mb-1">
+              <div class="card-body d-flex flex-column text-center">
+              <h5 class="card-title fs-6 text-uppercase mb-2 nome-produto">
               <?=$produto['nome'] ?>
-              </h6>
-              <span class="text-secondary small d-block fs-12">
-                <?=$produto['categoria'] ?>
-          </span>
-          </div>
+              </h5>
 
-          <a href="produtos.php" class="btn btn-success w-100 fw-bold py-2 rounded-1 text-uppercase mb-0 detalhes-destaque">Ver Produtos</a>
+              <p class="card-text text-secondary small mb-3">
+                <?=$produto['categoria'] ?>
+              </p>
+
+          <a href="produtos.php" class="btn btn-success btn-sm w-100 fw-bold py-2 text-uppercase mt-auto">Ver Produtos</a>
           </div>
           </div>
           </div>
           <?php endforeach; ?>
-
           </div>
+
           <div class="text-center my-5">
             <a href="produtos.php" class="btn btn-outiline-dark px-5 py-2 fw-bold text-uppercase">Ver mais produtos</a> 
           </div>

@@ -64,7 +64,7 @@
   <ul class="nav justify-content-center d-flex list-unstyled mb-0 ">
     
     <li><a class="nav-link <?= ($cat_atual == 8) ? 'active' : '' ?>" href="produtos.php?categoria=8">Pecuária</a></li>
-    <li><a class="nav-link <?= ($cat_atual == 9) ? 'active' : '' ?>" href="produtos.php?   categoria=9">Pet</a></li>
+    <li><a class="nav-link <?= ($cat_atual == 9) ? 'active' : '' ?>" href="produtos.php?categoria=9">Pet</a></li>
     <li><a class="nav-link <?= ($cat_atual == 10) ? 'active' : '' ?>" href="produtos.php?categoria=10">Medicamentos</a></li>
     <li><a class="nav-link <?= ($cat_atual == 11) ? 'active' : '' ?>" href="produtos.php?categoria=11">EPIs</a></li>
     <li><a class="nav-link <?= ($cat_atual == 12) ? 'active' : '' ?>" href="produtos.php?categoria=12">Jardinagem</a></li>
