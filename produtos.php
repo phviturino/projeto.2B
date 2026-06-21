@@ -90,7 +90,7 @@ function calcularDesconto($precoOriginal) {
                                 Categoria #<?php echo $linha_produto['id_categoria']; ?>
                             </p>
 
-                            <p class="card-text font-weight-bold fs-5 mt-auto mb-2 preço-produto">
+                            <p class="card-text fw-bold fs-5 mt-auto mb-2 preço-produto">
                                 R$ <?php echo number_format($linha_produto['preço'], 2, ',', '.'); ?>
                             </p>
 

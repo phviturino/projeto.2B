@@ -28,7 +28,7 @@
 
        <div class="container my-5">
 
-        <div class="d-flex align-itens-center justify-content-center mb-4 border-bottom pb-3">
+        <div class="d-flex align-items-center justify-content-center mb-4 border-bottom pb-3">
           <h2 class="fw-bold m-0  fs-3 text-dark text-uppercase destaque-vendas">🔥 Mais vendidos</h2>
         </div>
 
@@ -58,13 +58,13 @@
           </div>
 
           <div class="text-center my-5">
-            <a href="produtos.php" class="btn btn-outiline-dark px-5 py-2 fw-bold text-uppercase">Ver mais produtos</a> 
+            <a href="produtos.php" class="btn btn-outline-dark px-5 py-2 fw-bold text-uppercase">Ver mais produtos</a> 
           </div>
           </div>
 
 
             <div class="container my-5">
-              <div class="row align-itens-center">
+              <div class="row align-items-center">
 
                 <div class="col-md-6">
                   <h2>Conheça nossa história</h2>
