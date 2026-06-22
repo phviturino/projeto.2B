@@ -13,18 +13,23 @@
         </div>
         </div>
 
-        <?php
-        $produtos = [
-        ["nome" => "Bota coutry feminina", "categoria" => "EPIs", "img" => "1.jpeg"],
-        ["nome" => "Ração Special Dog Bionatural", "categoria" => "PET", "img" => "3.jpeg"],
-        ["nome" => "Camisa proteção UV", "categoria" => "Aventura e lazer", "img" => "2.jpeg"],
-        ["nome" => "Doogs Pascoa Pet", "categoria" => "PET", "img" => "4.jpeg"],
-        ["nome" => "Biscoito Ultralife Special Dog", "categoria" => "PET", "img" => "5.jpeg"],
-        ["nome" => "Caminha Perros", "categoria" => "PET", "img" => "6.jpeg"],
-        ["nome" => "Deo Colônia Perfume Perro", "categoria" => "PET", "img" => "7.jpeg"],
-        ["nome" => "Benefit Petiscos", "categoria" => "Equinos", "img" => "8.jpeg"]
-        ];
-        ?>
+       <?php
+      require_once __DIR__ . '/includes/conexao.php';
+
+      $produtos = array();
+
+      if($conexao) {
+    
+      $sql = "SELECT * FROM produto WHERE id IN (65, 24, 72, 118, 32, 121, 122, 116) LIMIT 8"; 
+      $resultado = mysqli_query($conexao, $sql);
+
+      if ($resultado && mysqli_num_rows($resultado) > 0) {
+      while ($linha = mysqli_fetch_assoc($resultado)) {
+            $produtos[] = $linha;
+        }
+    }
+}
+?>
 
        <div class="container my-5">
 
@@ -35,10 +40,10 @@
         <div class="row g-4">
           <?php foreach ($produtos as $produto): ?>
             <div class="col-12 col-sm-6 col-md-3">
-            <div class="card h-100 border-0 shadow bg-dark  text-white">
+            <div class="card h-100 border-0 shadow bg-dark  text-white position-relative">
 
             <div class="p-3 bg-white d-flex align-items-center justify-content-center container-foto-produto">
-              <img src="img/<?=$produto['img'] ?>" class="img-fluid foto-produto" alt="<?=$produto['nome'] ?>">
+              <img src="img/<?=$produto['imagem'] ?>" class="img-fluid foto-produto" alt="<?=$produto['nome'] ?>">
             </div>
 
               <div class="card-body d-flex flex-column text-center">
@@ -47,10 +52,10 @@
               </h5>
 
               <p class="card-text text-secondary small mb-3">
-                <?=$produto['categoria'] ?>
+                <?=$produto['id_categoria'] ?>
               </p>
 
-          <a href="produtos.php" class="btn btn-success btn-sm w-100 fw-bold py-2 text-uppercase mt-auto">Ver Produtos</a>
+          <a href="produto-detalhes.php?id=<?php echo $produto['id']; ?>" class="btn btn-success btn-sm w-100 fw-bold py-2 text-uppercase mt-auto stretched-link">Ver Produtos</a>
           </div>
           </div>
           </div>

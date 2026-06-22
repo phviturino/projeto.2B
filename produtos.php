@@ -26,29 +26,35 @@ function calcularDesconto($precoOriginal) {
 }
 
 
-    //armazenar os produtos
+    
     $todos_os_produto = array();
     $produto = array();
     $titulo_pagina = "Todos os nossos produto";
 
-    //conexão com o banco
+   
     if($conexao) {
-        $sql = "SELECT * FROM produto";
+        if (isset($_GET['busca']) && !empty(trim($_GET['busca']))) {
+            $busca = mysqli_real_escape_string($conexao, $_GET['busca']);
+            $titulo_pagina = "RESULTADO PARA: \"". htmlspecialchars($busca) . "\"";
+        
+        $sql = "SELECT * FROM produto WHERE nome LIKE '%$busca%'";
+        }else{
+            $sql = "SELECT * FROM produto";
+        }
         $resultado = mysqli_query($conexao, $sql);
 
             if ($resultado && mysqli_num_rows($resultado) > 0) {
             while ($linha = mysqli_fetch_assoc($resultado)) {
             $todos_os_produto[] = $linha;
+                }
             }
-            }
+            $produto = $todos_os_produto;
 
             if (isset($_GET['categoria']) && !empty($_GET['categoria'])) {
             $_catfiltrada = (int)$_GET['categoria'];
             $titulo_pagina = "Catálogo de Produtos: ";
 
     $produto = filtrarPorCategoria($todos_os_produto, $_catfiltrada);
-    }else {
-        $produto = $todos_os_produto;
     }
  }
 
@@ -75,7 +81,7 @@ function calcularDesconto($precoOriginal) {
             <?php foreach ($produto as $linha_produto): ?>
 
                 <div class="col">
-                    <div class="card h-100 shadow border-0 bg-dark text-white">
+                    <div class="card h-100 shadow border-0 bg-dark text-white position-relative">
 
                         <div class="p-3 bg-white d-flex align-items-center justify-content-center container-foto-produto">
                             <img src="img/<?php echo $linha_produto['imagem']; ?>" class="img-fluid foto-produto" alt="<?php echo $linha_produto['nome']; ?>">
@@ -94,11 +100,11 @@ function calcularDesconto($precoOriginal) {
                                 R$ <?php echo number_format($linha_produto['preço'], 2, ',', '.'); ?>
                             </p>
 
-                            <p class="text-success-small mb-3 fw-bold">
+                            <p class="text-success small mb-3 fw-bold">
                                 ou R$ <?php echo number_format(calcularDesconto($linha_produto['preço']), 2, ',', '.'); ?> no PIX
                             </p>
 
-                            <a href="produto-detalhes.php?id=<?php echo $linha_produto['id']; ?>" class="btn btn-success btn-sm w-100 fw-bold py-2 text-uppercase">Ver Produtos</a>
+                            <a href="produto-detalhes.php?id=<?php echo $linha_produto['id']; ?>" class="btn btn-success btn-sm w-100 fw-bold py-2 text-uppercase stretched-link">Ver Produtos</a>
                         </div>
                     </div>
                 </div>

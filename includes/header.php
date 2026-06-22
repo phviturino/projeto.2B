@@ -25,9 +25,11 @@
 </div>
 
 <div class="col-md-6 col-sm-8">
-    <form class="d-flex busca" role="buscar">
-      <input class="form-control me-2 w-100" type="search" placeholder="Buscar" aria-label="Buscar"/>
-      <button class="btn btn-outline-success" type="submit">Buscar</button>
+    <form action="produtos.php" method="GET" class="d-flex busca" role="search">
+
+      <input class="form-control me-2 w-100" type="search" name="busca" placeholder="Buscar" aria-label="Buscar" value="<?= isset($_GET['busca']) ? htmlspecialchars($_GET['busca']) : '' ?>"/>
+
+      <button class="btn btn-outline-success" type="submit">Buscar Produto</button>
     </form>
     </div>
 
