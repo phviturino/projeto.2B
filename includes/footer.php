@@ -1,7 +1,6 @@
 <footer class="bg-dark text-white pt-5 pb-3">
     <div class="container">
 
-        <!--logo + descrição-->
     <div class="row align-items-center mb-3">
     <div class="col-md-3">
     <img src="img/lojaicone.jpeg" alt="icone" class="logo-footer rounded-circle w-100">
@@ -12,8 +11,7 @@
     </div>
 
     <hr class="border-secondary">
-
-    <!--lojas-->
+    
     <div class="row py-4">
 
         <div class="col-6 col-md-3 mb-4">
@@ -51,7 +49,6 @@
 
     <hr class="border-secondary">
 
-    <!--rodape final-->
         <div class="d-flex justify-content-between align-items-center py-3">
         <p class="text-secondary small mb-0">©2026 Saúde Animal Agro e Vet - Todos os direitos reservados</p>
         <div class="d-flex align-items-center gap-3">

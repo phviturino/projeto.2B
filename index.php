@@ -8,10 +8,10 @@
           <div class="row g-0">
             <div class="col-12">
               <img src="img/banner.png" alt="banner" class="img-fluid w-100 h-75 rounded-2">
+            </div>
+          </div>
         </div>
-        </div>
-        </div>
-        </div>
+      </div>
 
        <?php
       require_once __DIR__ . '/includes/conexao.php';
@@ -66,8 +66,6 @@
             <a href="produtos.php" class="btn btn-outline-dark px-5 py-2 fw-bold text-uppercase">Ver mais produtos</a> 
           </div>
           </div>
-
-
             <div class="container my-5">
               <div class="row align-items-center">
 
@@ -80,34 +78,29 @@
       <div class="row mt-5 text-center">
 
         <div class="col-md-4">
-        <h2 class="text-warning fw-bold">7+</h2>
-        <p class="text-uppercase">Anos</p>
+          <h2 class="text-warning fw-bold">7+</h2>
+          <p class="text-uppercase">Anos</p>
         </div>
 
         <div class="col-md-4">
-        <h2 class="text-warning fw-bold">4</h2>
-        <p class="text-uppercase">LOJAS</p>
+          <h2 class="text-warning fw-bold">4</h2>
+          <p class="text-uppercase">LOJAS</p>
         </div>
 
         <div class="col-md-4">
-        <h2 class="text-warning fw-bold">1000+</h2>
-        <p class="text-uppercase">Produtos</p>
+          <h2 class="text-warning fw-bold">1000+</h2>
+          <p class="text-uppercase">Produtos</p>
         </div>
 
         </div>
-
-                  </div>
+                </div>
                   <div class="col-md-6">
                     <img class="img-fluid foto rounded-5" src="img/colaboradores.jpeg" alt="Colaboradores">
+                  </div>
                 </div>
-
-                
-
-                </div>
-          
-          </div>
-          </div>
+              </div>
             </div>
-          </div>      
+          </div>
+        </div>      
       </main>
       <?php include 'includes/footer.php';?>

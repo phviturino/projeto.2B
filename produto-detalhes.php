@@ -53,7 +53,7 @@ $numeroWhatsapp = "5544998514080";
             <hr class="my-4 text-secondary">
 
             <div class="mb-4">
-                <span class="text-muted d-block mb-1 smal"Preço de catálogo:></span>
+                <span class="text-muted d-block mb-1 small"Preço de catálogo:></span>
                 <h3 class="text-dark fw-bold mb-1 fs-3">
                     R$ <?= number_format($produtoEncontrado['preço'], 2, ',', '.'); ?>
                 </h3> 
