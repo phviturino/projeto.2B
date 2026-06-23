@@ -19,7 +19,7 @@
         <div class="col-6 col-md-3 mb-4">
         <h6 class="text-warning text-uppercase fw-bold">Rancho Alegre D'Oeste</h6>
         <p class="text-secondary small">Av. Paraná, 566 - 87395-000 - PR</p>
-        <a href="contato.php" class="text-success text-decoration-none">
+        <a href="https://wa.me/5544997050997" class="text-success text-decoration-none">
         <i class="bi bi-whatsapp"></i>Whatsapp
         </a>
         </div>
@@ -27,7 +27,7 @@
         <div class="col-6 col-md-3 mb-4">
         <h6 class="text-warning text-uppercase fw-bold">Boa Esperança</h6>
         <p class="text-secondary small">Rua Bahia, 354 - 87390-000 - PR</p>
-        <a href="contato.php" class="text-success text-decoration-none">
+        <a href="https://wa.me/5544998514080" class="text-success text-decoration-none">
         <i class="bi bi-whatsapp"></i>Whatsapp
         </a>
         </div>
@@ -35,7 +35,7 @@
         <div class="col-6 col-md-3 mb-4">
         <h6 class="text-warning text-uppercase fw-bold">Goioerê</h6>
         <p class="text-secondary small">Rua Marinho Taváres, 815 - 87360-000 - PR</p>
-        <a href="contato.php" class="text-success text-decoration-none">
+        <a href="https://wa.me/5544998396367" class="text-success text-decoration-none">
         <i class="bi bi-whatsapp"></i>Whatsapp
         </a>
         </div>
@@ -43,7 +43,7 @@
         <div class="col-6 col-md-3 mb-4">
         <h6 class="text-warning text-uppercase fw-bold">Quarto Centenário</h6>
         <p class="text-secondary small">Av. Bandeirantes, 670 - 87365-000 - PR</p>
-        <a href="contato.php" class="text-success text-decoration-none">
+        <a href="https://wa.me/554497474375" class="text-success text-decoration-none">
         <i class="bi bi-whatsapp"></i>Whatsapp
         </a>
         </div>

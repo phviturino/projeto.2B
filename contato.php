@@ -1,34 +1,67 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossas Lojas - WhatsApp</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="contato.css">
-</head>
-<body>
+<?php include 'includes/header.php';?>
 
-    <div class="container text-center">
-        <div class="profile mb-4">
-            <img src="img/lojaicone.jpeg" alt="Logo da Loja" class="logo">
-            <h1 class="mt-3 text-white text-nowrap">Saúde Animal Agro e Vet</h1>
-            <p class="text-white">Escolha a unidade mais próxima:</p>
-        </div>
+<main class="container mt-5 mb-5 text-center">
+    <div class="row justify-content-center">
+        <div class="col-12"> 
+            <h2 class="text-dark mb-3 fw-bold">Fale conosco pelo WhatsApp</h2>
+            <p class="text-secondary mb-5">Selecione a unidade mais próxima de você para receber um atendimento personalizado:</p>
 
-        <div class="d-grid gap-3">
-            
-            <a href="https://wa.me/5544997050997" target="_blank" class="btn btn-outline-light rounded-pill py-3">WhatsApp - Rancho Alegre</a>
+            <div class="row g-4 fustify-content-center">
 
-            <a href="https://wa.me/5544998514080" target="_blank" class="btn btn-outline-light rounded-pill py-3">WhatsApp - Boa Esperança</a>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100 shadow border-0 p-3 bg-dark text-white text-center">
+                    <i class="bi bi-geo-alt-fill text-success fs-2 mb-3"></i>
+                    <h5 class="fw-bold mb-2 text-uppercase">Loja de Rancho Alegre</h5>
 
-            <a href="https://wa.me/5544998396367" target="_blank" class="btn btn-outline-light rounded-pill py-3">WhatsApp - Goioerê</a>
-            
-            <a href="https://wa.me/554497474375" target="_blank" class="btn btn-outline-light rounded-pill py-3">WhatsApp - Quarto Centenário</a>
-            
-            <a href="http://localhost:8080/PROJETO2/" class="btn btn-success rounded-pill py-3 fw-bold mt-2">Visite nosso Site</a>
+                    <a href="https://api.whatsapp.com/send?phone=5544997050997&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Rancho+Alegre." target="_blank" class="btn btn-success fw-bold py-2 text-uppercase mt-auto shadow btn-sm">
+                    <i class="bi bi-whatsapp me-1"></i> Chamar 
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card h-100 shadow border-0 p-3 bg-dark text-white text-center">
+                        <i class="bi bi-geo-alt-fill text-success fs-2 mb-3"></i>
+                        <h5 class="fw-bold mb-2 text-uppercase">Loja de Boa Esperança</h5>
+                        
+                        <a href="https://api.whatsapp.com/send?phone=55544998514080&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Boa+Esperança." 
+                           target="_blank" 
+                           class="btn btn-success fw-bold py-2 text-uppercase mt-auto shadow btn-sm">
+                           <i class="bi bi-whatsapp me-1"></i> Chamar
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card h-100 shadow border-0 p-3 bg-dark text-white text-center">
+                        <i class="bi bi-geo-alt-fill text-success fs-2 mb-3"></i>
+                        <h5 class="fw-bold mb-2 text-uppercase">Loja de Goioerê</h5>
+                        
+                        <a href="https://api.whatsapp.com/send?phone=554499839636&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Goioerê." 
+                           target="_blank" 
+                           class="btn btn-success fw-bold py-2 text-uppercase mt-auto shadow btn-sm">
+                           <i class="bi bi-whatsapp me-1"></i> Chamar
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card h-100 shadow border-0 p-3 bg-dark text-white text-center">
+                        <i class="bi bi-geo-alt-fill text-success fs-2 mb-3"></i>
+                        <h5 class="fw-bold mb-2 text-uppercase">Loja Quarto Centenário</h5>
+                        
+                        <a href="https://api.whatsapp.com/send?phone=554497474375&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Quarto+Centenário." 
+                           target="_blank" 
+                           class="btn btn-success fw-bold py-2 text-uppercase mt-auto shadow btn-sm">
+                           <i class="bi bi-whatsapp me-1"></i> Chamar
+                        </a>
+                    </div>
+                </div>
+                </div>
         </div>
     </div>
+</main>
 
-</body>
-</html>
+<?php 
+include_once __DIR__ . '/includes/footer.php'; 
+?>
