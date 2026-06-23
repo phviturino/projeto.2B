@@ -1,8 +1,8 @@
 <?php
-$servername = "192.168.56.102";
-$username = "pedro";
-$password = "140823pl";
-$dbname = "saudeanimal";
+$servername = "sql313.ezyro.com";
+$username = "ezyro_42246583";
+$password = "6bf9340ff4ec2";
+$dbname = "ezyro_42246583_saudeanimal";
 
 $conexao = new mysqli($servername, $username, $password, $dbname);
 

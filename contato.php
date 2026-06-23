@@ -48,7 +48,7 @@
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="card h-100 shadow border-0 p-3 bg-dark text-white text-center">
                         <i class="bi bi-geo-alt-fill text-success fs-2 mb-3"></i>
-                        <h5 class="fw-bold mb-2 text-uppercase">Loja Quarto Centenário</h5>
+                        <h5 class="fw-bold mb-2 text-uppercase">Loja de Quarto Centenário</h5>
                         
                         <a href="https://api.whatsapp.com/send?phone=554497474375&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Quarto+Centenário." 
                            target="_blank" 
