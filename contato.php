@@ -24,7 +24,7 @@
                         <i class="bi bi-geo-alt-fill text-success fs-2 mb-3"></i>
                         <h5 class="fw-bold mb-2 text-uppercase">Loja de Boa Esperança</h5>
                         
-                        <a href="https://api.whatsapp.com/send?phone=55544998514080&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Boa+Esperança." 
+                        <a href="https://api.whatsapp.com/send?phone=5544998514080&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Boa+Esperança." 
                            target="_blank" 
                            class="btn btn-success fw-bold py-2 text-uppercase mt-auto shadow btn-sm">
                            <i class="bi bi-whatsapp me-1"></i> Chamar
