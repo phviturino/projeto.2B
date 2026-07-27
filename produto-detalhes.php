@@ -58,10 +58,7 @@ $numeroWhatsapp = "5544998514080";
                     R$ <?= number_format($produtoEncontrado['preço'], 2, ',', '.'); ?>
                 </h3> 
 
-                <?php $precoPix = $produtoEncontrado['preço'] * 0.95; ?>
-                <p class="text-success fw-bold  fs-4 mb-0">
-                    ou R$ <?= number_format($precoPix, 2, ',', '.'); ?> no PIX (5% OFF)
-                </p>    
+                
 
     <div class="alert alert-light border p-3 mb-4 rounded-3 small text-muted">
         📌 <strong>Nota: </strong> Atualmente não realizamos vendas direto pelo site. Clique no botão abaixo para falar com um de nossos atendentes no whatsApp e garantir seu produto!

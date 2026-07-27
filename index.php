@@ -39,7 +39,7 @@
 
         <div class="row g-4">
           <?php foreach ($produtos as $produto): ?>
-            <div class="col-12 col-sm-6 col-md-3">
+            <div class="col-6 col-sm-6 col-md-3">
             <div class="card h-100 border-0 shadow bg-dark  text-white position-relative">
 
             <div class="p-3 bg-white d-flex align-items-center justify-content-center container-foto-produto">
@@ -71,23 +71,22 @@
 
                 <div class="col-md-6">
                   <h2>Conheça nossa história</h2>
-
                   <p>Fundada em 2020, a Saúde Animal Agro e Vet nasceu do sonho de oferecer produtos de qualidade para o cuidado dos animais e para a agricultura. Com uma equipe apaixonada por animais e comprometida com a excelência, buscamos proporcionar a melhor experiência de compra para nossos clientes.</p>
                   <p>Desde o início, nosso foco tem sido a satisfação do cliente, oferecendo uma ampla variedade de produtos que atendem às necessidades de cada animal e agricultor. Com quatro lojas físicas estrategicamente localizadas, estamos sempre prontos para atender nossos clientes com dedicação e profissionalismo.</p>
 
       <div class="row mt-5 text-center">
 
-        <div class="col-md-4">
+        <div class="col-3 ms-5">
           <h2 class="text-warning fw-bold">7+</h2>
           <p class="text-uppercase">Anos</p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-3">
           <h2 class="text-warning fw-bold">4</h2>
           <p class="text-uppercase">LOJAS</p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-3">
           <h2 class="text-warning fw-bold">1000+</h2>
           <p class="text-uppercase">Produtos</p>
         </div>

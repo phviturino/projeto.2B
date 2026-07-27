@@ -9,7 +9,6 @@
     padding: 16px 0;
 }
 .logo-img{
-    margin-left: 100px;
     margin-top: 20px;
     width: 60%;
     height: auto
@@ -50,7 +49,7 @@
     background-color: #fff;
     padding: 12px 0;
 }
-.menu-nav :hover {
+.menu-nav:hover {
     background-color: #f8f9fa;
 }
 .menu-nav ul li a {
@@ -110,7 +109,8 @@ footer p{
     overflow: hidden;
     background-color: #fff;
 }
-.foto-produto .produto-destaque {
+.foto-produto,
+.produto-destaque {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -146,16 +146,27 @@ footer p{
 .btn-whatsapp:hover {
     background-color: #128C7E !important;
     transform: translateY(-2px);
-    color: ffffff;
+    color: #ffffff;
 }
 
-/*mobile*/
 @media (max-width: 768px) {
-    .logo-img {
-        margin-left: 0;
-        margin-top: 0;
-        width: 55px;
+    .logo-img-mobile {
+        width: 150px;
     }
+
+.btn-contato-mobile {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
 .btn-banner-home {
     font-size: 14px;
     padding: 10px 20px !important;
@@ -164,7 +175,8 @@ footer p{
     height: auto !important;
     padding: 10px 0;
 }
-.h1, p {
+.h1,
+p {
     font-size: 20px;
 }
 .foto {
@@ -178,9 +190,32 @@ footer p{
 .box-produto {
     height: 300px;
 }
-.footer .d-flex {
+footer .d-flex {
     flex-direction: column;
     align-items: center;
     gap: 8px;
 }
+.footer-loja {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.logo-footer{
+    max-width: 180px;
+    display: block;
+    margin: 0 auto 5px;
+}
+.footer-loja h6 {
+    margin-top: 50px;
+    margin-bottom: 1px;
+}
+.footer-loja p{
+    min-height: 55px;
+    font-weight: 14px;
+    margin-bottom: 10px;
+}
+.footer-loja a{
+    display: inline-block;
+    margin-top: 5px;
+}
+
 }

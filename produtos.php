@@ -16,14 +16,6 @@ function filtrarPorCategoria ($listaProdutos, $idCategoria) {
         return $produtosFiltrados;
 }
 
-function calcularDesconto($precoOriginal) {
-        if (!is_numeric($precoOriginal) || $precoOriginal <= 0) {
-        return 0.00;
-        }
-
-        $desconto = $precoOriginal * 0.05;
-         return $precoOriginal - $desconto;
-}
 
 
     
@@ -68,7 +60,7 @@ function calcularDesconto($precoOriginal) {
     <?php echo $titulo_pagina; ?>
     </h2>
     
-    <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="row row-cols-2 row-cols-md-4 g-4">
         
         <?php if (empty($produto)): ?>
 
@@ -100,9 +92,7 @@ function calcularDesconto($precoOriginal) {
                                 R$ <?php echo number_format($linha_produto['preço'], 2, ',', '.'); ?>
                             </p>
 
-                            <p class="text-success small mb-3 fw-bold">
-                                ou R$ <?php echo number_format(calcularDesconto($linha_produto['preço']), 2, ',', '.'); ?> no PIX
-                            </p>
+                            
 
                             <a href="produto-detalhes.php?id=<?php echo $linha_produto['id']; ?>" class="btn btn-success btn-sm w-100 fw-bold py-2 text-uppercase stretched-link">Ver Produtos</a>
                         </div>

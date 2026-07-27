@@ -16,45 +16,51 @@
     <nav class="navbar-dark py-3">
       <div class="container-fluid px-3"> 
 
-    <div class="d-flex align-items-center justify-content-between mb-2 d-md-none">
-      <a class="logo" href="index.php">
-      <img src="img/lojaicone.jpeg" alt="icone" class="logo-img-mobile">
-    </a>
-    <a href="contato.php" class="bt-contato-mobile"><i class="bi bi-whatsapp"></i>Fale conosco</a>
-</div>
+      <div class="d-flex justify-content-center mb-3 d-md-none">
+        <a class="logo" href="index.php">
+        <img src="img/lojaicone.jpeg" alt="icone" class="logo-img-mobile">
+        </a>
+      </div>
 
-<div class="row aligin-items-center d-none d-md-flex">
-  <div class="col-md-3">
-    <a class="logo" href="index.php">
+<div class="row align-items-center d-none d-md-flex">
+
+    <div class="col-md-3">
+      <a class="logo" href="index.php">
       <img src="img/lojaicone.jpeg" alt="icone" class="logo-img">
-    </a>
+      </a>
     </div>
 
     <div class="col-md-6">
-    <form class="d-flex" action="produtos.php" method="GET" class="d-flex busca" role="search">
+      <form action="produtos.php" method="GET" class="d-flex busca" role="search">
       <input class="form-control me-2 w-100" type="search" name="busca" placeholder="Buscar" aria-label="Buscar" value="<?= isset($_GET['busca']) ? htmlspecialchars($_GET['busca']) : '' ?>"/>
       <button class="btn btn-outline-success" type="submit">Buscar Produto</button>
       </form>
     </div>
 
-    <div class="col-md-3">
-      <div class="d-flex align-items-center justify-content-end info-contato">
-            <a href="contato.php" class="btn-contato">
-          <i class="bi bi-whatsapp"></i>
-          Fale conosco
-          </a>
+    <div class="col-md-3 d-md-block">
+        <div class="d-flex align-items-center justify-content-end info-contato">
+        <a href="contato.php" class="btn-contato">
+        <i class="bi bi-whatsapp"></i>
+        Fale conosco
+        </a>
+    </div>
         </div>
-      </div>
     </div>
 
-    <div class="d-md-none">
-      <form action="produtos.php" method="GET" class="d-flex" role="search">
-        <input class="form-control me-2 w-100" type="search" name="busca" placeholder="Buscar" aria-label="Buscar" value="<?= isset($_GET['busca']) ? htmlspecialchars($_GET['busca']) : '' ?>"/>
-        <button class="btn btn-outline-success" type="submit">Buscar Produto</button>
-      </form>
+    <div class="d-md-none d-flex align-items-center">
+    <form action="produtos.php" method="GET" class="d-flex flex-grow-1" role="search">
+    <input class="form-control me-2" type="search" name="busca" placeholder="Buscar Produto" aria-label="Buscar" value="<?= isset($_GET['busca']) ? htmlspecialchars($_GET['busca']) : '' ?>"/>
+    <button class="btn btn-outline-success px-3" type="submit">
+      <i class="bi bi-search"></i>
+    </button>
+    
+    </form>
+    <a href="contato.php" class="btn-contato-mobile ms-2">
+    <i class="bi bi-whatsapp"></i>
+      </a>
     </div>
 
-    </div>
+  </div>
 </nav>
 
 <div class="menu-nav text-center mb-3">
