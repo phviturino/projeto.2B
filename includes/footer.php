@@ -77,7 +77,7 @@
 
         <hr class="border-secondary">
         <div class="text-center mt-4">
-            <img src="img/footer.png" alt="Saúde animal">
+            <img src="img-footer.png" class="w-50" alt="Saúde animal">
         </div>
 
     </div>
