@@ -54,30 +54,28 @@
         </div>
     </div>
 
-    <hr class="border-secondary">
-
-    <div class="py-3">
+<div class="footer-contato py-3">
         <a href="https://www.instagram.com/saudeanimalagroevet/" target="_blank" class="text-decoration-none text-white me-3">
-        <i class="bi bi-instagram fs-5 me-2"></i>
+        <i class="bi bi-instagram fs-5 me-2 text-center"></i>
         @saudeanimalagroevet
         </a>
 
         <a href="mailto:saudeanimalagroevet@outlook.com.br" class="text-decoration-none text-white">
-        <i class="bi bi-envelope fs-5 me-2"></i>
+        <i class="bi bi-envelope fs-5 me-2 text-center"></i>
         saudeanimalagroevet@outlook.com.br
         </a>
         </div>
 
-        <hr class="border-secondary">
-        <div class="text-center py-3">
-            <p class="text-secondary small mb-0">
+    <hr class="border-secondary">
+
+        <div class="footer-redes py-3">
+            <p class="text-secondary small mb-0 text-center">
             ©2026 Saúde Animal Agro e Vet - Todos os direitos reservados
             </p>
         </div>
 
-        <hr class="border-secondary">
         <div class="text-center mt-4">
-            <img src="img-footer.png" class="w-50" alt="Saúde animal">
+            <img src="img-footer.png" class="img-footer" alt="Saúde animal">
         </div>
 
     </div>
