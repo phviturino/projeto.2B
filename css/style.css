@@ -65,7 +65,7 @@
     padding: 10px 0;
     border-bottom: 1px solid #eee;
 }
-.cat-link {
+.nav-link {
     text-decoration: none;
     color: #1a1a1a;
     padding: 6px 12px;
@@ -76,8 +76,8 @@
     border: 1px solid #ddd;
     transition: all 0.2s;
 }
-.cat-link:hover,
-.cat-link.active {
+.nav-link:hover,
+.nav-link.active {
     background-color: #198754;
     color: #fff;
     border-color: #198754;

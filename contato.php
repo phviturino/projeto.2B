@@ -13,7 +13,7 @@
                     <i class="bi bi-geo-alt-fill text-success fs-2 mb-3"></i>
                     <h5 class="fw-bold mb-2 text-uppercase">Loja de Rancho Alegre</h5>
 
-                    <a href="https://api.whatsapp.com/send?phone=5544997050997&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Rancho+Alegre." target="_blank" class="btn btn-success fw-bold py-2 text-uppercase mt-auto shadow btn-sm">
+                    <a href="https://api.whatsapp.com/send?phone=5544997050997&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Rancho+Alegre." target="_blank" rel="noopener noreferrer" class="btn btn-success fw-bold py-2 text-uppercase mt-auto shadow btn-sm">
                     <i class="bi bi-whatsapp me-1"></i> Chamar 
                     </a>
                 </div>
@@ -25,7 +25,7 @@
                         <h5 class="fw-bold mb-2 text-uppercase">Loja de Boa Esperança</h5>
                         
                         <a href="https://api.whatsapp.com/send?phone=5544998514080&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Boa+Esperança." 
-                           target="_blank" 
+                           target="_blank" rel="noopener noreferrer"
                            class="btn btn-success fw-bold py-2 text-uppercase mt-auto shadow btn-sm">
                            <i class="bi bi-whatsapp me-1"></i> Chamar
                         </a>
@@ -37,8 +37,8 @@
                         <i class="bi bi-geo-alt-fill text-success fs-2 mb-3"></i>
                         <h5 class="fw-bold mb-2 text-uppercase">Loja de Goioerê</h5>
                         
-                        <a href="https://api.whatsapp.com/send?phone=554499839636&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Goioerê." 
-                           target="_blank" 
+                        <a href="https://api.whatsapp.com/send?phone=5544998396367&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Goioerê." 
+                           target="_blank" rel="noopener noreferrer"
                            class="btn btn-success fw-bold py-2 text-uppercase mt-auto shadow btn-sm">
                            <i class="bi bi-whatsapp me-1"></i> Chamar
                         </a>
@@ -50,8 +50,7 @@
                         <i class="bi bi-geo-alt-fill text-success fs-2 mb-3"></i>
                         <h5 class="fw-bold mb-2 text-uppercase">Loja de Quarto Centenário</h5>
                         
-                        <a href="https://api.whatsapp.com/send?phone=554497474375&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Quarto+Centenário." 
-                           target="_blank" 
+                        <a href="https://api.whatsapp.com/send?phone=554497474375&text=Ol%C3%A1%2C+gostaria+de+atendimento+na+loja+de+Quarto+Centenário." target="_blank" rel="noopener noreferrer"
                            class="btn btn-success fw-bold py-2 text-uppercase mt-auto shadow btn-sm">
                            <i class="bi bi-whatsapp me-1"></i> Chamar
                         </a>

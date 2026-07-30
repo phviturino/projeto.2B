@@ -77,9 +77,9 @@
 <?php
     $cat_atual = isset($_GET['categoria']) ? (int)$_GET['categoria'] : 0;
 ?>
-
-  <div class="categorias-nav mb-3 px-2"></div>
-    <div class="d-flex flex-wrap justify-content-center gap-1">
+  <div class="container">
+  <div class="categorias-nav mb-3 px-2">
+    <div class="d-flex flex-wrap justify-content-center gap-2">
     <a class="nav-link <?= ($cat_atual == 8) ? 'active' : '' ?>" href="produtos.php?categoria=8">Pecuária</a>
     <a class="nav-link <?= ($cat_atual == 9) ? 'active' : '' ?>" href="produtos.php?categoria=9">Pet</a>
     <a class="nav-link <?= ($cat_atual == 10) ? 'active' : '' ?>" href="produtos.php?categoria=10">Medicamentos</a>
@@ -89,7 +89,9 @@
     <a class="nav-link <?= ($cat_atual == 14) ? 'active' : '' ?>" href="produtos.php?categoria=14">equipamentos</a>
     <a class="nav-link <?= ($cat_atual == 15) ? 'active' : '' ?>" href="produtos.php?categoria=15">Vestuário</a>
     <a class="nav-link <?= ($cat_atual == 16) ? 'active' : '' ?>" href="produtos.php?categoria=16">Outros</a>
+      </div>
     </div>
+  </div>
 </div>
 
 <?php endif;?>

@@ -18,7 +18,7 @@
             <div class="footer-loja">
         <h6 class="text-warning text-uppercase fw-bold">Rancho Alegre D'Oeste</h6>
         <p class="text-secondary small">Av. Paraná, centro, 566 - 87395-000 - PR</p>
-        <a href="https://wa.me/5544997050997" class="text-success text-decoration-none">
+        <a href="https://api.whatsapp.com/send?phone=5544997050997" target="_blank" rel="noopener noreferrer" class="text-success text-decoration-none">
         <i class="bi bi-whatsapp"></i>Whatsapp
         </a>
         </div>
@@ -28,7 +28,7 @@
             <div class="footer-loja">
         <h6 class="text-warning text-uppercase fw-bold">Boa Esperança</h6>
         <p class="text-secondary small">Rua Bahia, centro, 354 - 87390-000 - PR</p>
-        <a href="https://wa.me/5544998514080" class="text-success text-decoration-none">
+        <a href="https://api.whatsapp.com/send?phone=5544998514080" class="text-success text-decoration-none">
         <i class="bi bi-whatsapp"></i>Whatsapp
         </a>
         </div>
@@ -38,7 +38,7 @@
             <div class="footer-loja">
         <h6 class="text-warning text-uppercase fw-bold">Goioerê</h6>
         <p class="text-secondary small">Rua Marinho Taváres, 815 - 87360-000 - PR</p>
-        <a href="https://wa.me/5544998396367" class="text-success text-decoration-none">
+        <a href="https://api.whatsapp.com/send?phone=5544998396367" target="_blank" rel="noopener noreferrer" class="text-success text-decoration-none">
         <i class="bi bi-whatsapp"></i>Whatsapp
         </a>
         </div>
@@ -48,14 +48,14 @@
             <div class="footer-loja">
         <h6 class="text-warning text-uppercase fw-bold">Quarto Centenário</h6>
         <p class="text-secondary small">Av. Bandeirantes, 670 - 87365-000 - PR</p>
-        <a href="https://wa.me/554497474375" class="text-success text-decoration-none">
+        <a href="https://api.whatsapp.com/send?phone=554497474375" target="_blank" rel="noopener noreferrer" class="text-success text-decoration-none">
         <i class="bi bi-whatsapp"></i>Whatsapp
         </a>
         </div>
     </div>
 
 <div class="footer-contato py-3">
-        <a href="https://www.instagram.com/saudeanimalagroevet/" target="_blank" class="text-decoration-none text-white me-3">
+        <a href="https://www.instagram.com/saudeanimalagroevet/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-white me-3">
         <i class="bi bi-instagram fs-5 me-2 text-center"></i>
         @saudeanimalagroevet
         </a>

@@ -21,7 +21,7 @@ function filtrarPorCategoria ($listaProdutos, $idCategoria) {
     
     $todos_os_produto = array();
     $produto = array();
-    $titulo_pagina = "Todos os nossos produto";
+    $titulo_pagina = "Todos os nossos produtos";
 
    
     if($conexao) {

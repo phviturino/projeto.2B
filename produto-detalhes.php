@@ -64,7 +64,7 @@ $numeroWhatsapp = "5544998514080";
         📌 <strong>Nota: </strong> Atualmente não realizamos vendas direto pelo site. Clique no botão abaixo para falar com um de nossos atendentes no whatsApp e garantir seu produto!
     </div>
 
-        <a href="<?= $linkWhatsapp; ?>" target="_blank" class="btn btn-lg w-100 fw-bold py-3 text-uppercase shadow-sm d-flex align-items-center justify-content-center gap-2 fs-5 btn-whatsapp">
+        <a href="<?= $linkWhatsapp; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-lg w-100 fw-bold py-3 text-uppercase shadow-sm d-flex align-items-center justify-content-center gap-2 fs-5 btn-whatsapp">
     💬 Comprar via WhatsApp
         </a>
     </div>
