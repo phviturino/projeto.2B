@@ -1,4 +1,4 @@
-<?php include 'includes/header.php';?>
+<?php include '../includes/header.php';?>
 
 <main class="container mt-5 mb-5 text-center">
     <div class="row justify-content-center">

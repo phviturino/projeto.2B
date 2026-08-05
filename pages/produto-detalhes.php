@@ -1,6 +1,6 @@
 <?php 
-include 'includes/header.php';
-require_once __DIR__ . '/includes/conexao.php';
+include '../includes/header.php';
+require_once __DIR__ . '/../includes/conexao.php';
 
 $produtoEncontrado = null;
 
@@ -28,7 +28,7 @@ $numeroWhatsapp = "5544998514080";
     ?>
 
     <div class="mb-4">
-        <a href="produtos.php" class="btn btn-outline-dark btn-sm fw-bold text-uppercase px-3">
+        <a href="../pages/produtos.php" class="btn btn-outline-dark btn-sm fw-bold text-uppercase px-3">
             ← Voltar ao Catálogo
         </a>
     </div>
@@ -36,7 +36,7 @@ $numeroWhatsapp = "5544998514080";
     <div class="row g-5">
         <div class="col-12 col-md-6">
             <div class="border rounded shadow-sm p-4 bg-white d-flex align-items-center justify-content-center box-produto">
-                <img src="img/<?= $produtoEncontrado['imagem'];?>" class="img-fluid box-img" alt="<?= $produtoEncontrado['nome']; ?>">
+                <img src="../img/<?= $produtoEncontrado['imagem'];?>" class="img-fluid box-img" alt="<?= $produtoEncontrado['nome']; ?>">
             </div>
         </div>
         
@@ -74,10 +74,10 @@ $numeroWhatsapp = "5544998514080";
     <div class="row my-5 py-5">
         <div class="col-12 text-center">
             <h2 class="text-danger fw-bold">Ops! Produto não encontrado.</h2>
-        <a href="produtos.php" class="btn btn-dark text-uppercase px-4 mt-3">Voltar aos produtos</a>
+        <a href="pages/produtos.php" class="btn btn-dark text-uppercase px-4 mt-3">Voltar aos produtos</a>
         </div>
     </div>
 
 <?php endif; ?></main>
 
-<?= include 'includes/footer.php'; ?>
+<?= include '../includes/footer.php'; ?>

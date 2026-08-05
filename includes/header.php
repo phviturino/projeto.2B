@@ -1,3 +1,7 @@
+<?php
+$base = (basename($_SERVER['PHP_SELF']) == 'index.php') ? '' : '../';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saúde Animal Agro e Vet</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?= $base ?>css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -17,21 +21,21 @@
       <div class="container-fluid px-3"> 
 
       <div class="d-flex justify-content-center mb-3 d-md-none">
-        <a class="logo" href="index.php">
-        <img src="img/lojaicone.jpeg" alt="icone" class="logo-img-mobile">
+        <a class="logo" href="../index.php">
+        <img src="<?= $base ?>img/lojaicone.jpeg" alt="icone" class="logo-img-mobile">
         </a>
       </div>
 
 <div class="row align-items-center d-none d-md-flex">
 
     <div class="col-md-3">
-      <a class="logo" href="index.php">
-      <img src="img/lojaicone.jpeg" alt="icone" class="logo-img">
+      <a class="logo" href="../index.php">
+      <img src="<?= $base ?>img/lojaicone.jpeg" alt="icone" class="logo-img">
       </a>
     </div>
 
     <div class="col-md-6">
-      <form action="produtos.php" method="GET" class="d-flex busca" role="search">
+      <form action="<?= $base ?>pages/produtos.php" method="GET" class="d-flex busca" role="search">
       <input class="form-control me-2 w-100" type="search" name="busca" placeholder="Buscar" aria-label="Buscar" value="<?= isset($_GET['busca']) ? htmlspecialchars($_GET['busca']) : '' ?>"/>
       <button class="btn btn-outline-success" type="submit">Buscar Produto</button>
       </form>
@@ -39,7 +43,7 @@
 
     <div class="col-md-3 d-md-block">
         <div class="d-flex align-items-center justify-content-end info-contato">
-        <a href="contato.php" class="btn-contato">
+        <a href="<?= $base ?>pages/contato.php" class="btn-contato">
         <i class="bi bi-whatsapp"></i>
         Fale conosco
         </a>
@@ -48,14 +52,14 @@
     </div>
 
     <div class="d-md-none d-flex align-items-center">
-    <form action="produtos.php" method="GET" class="d-flex flex-grow-1" role="search">
+    <form action="<?= $base ?>pages/produtos.php" method="GET" class="d-flex flex-grow-1" role="search">
     <input class="form-control me-2" type="search" name="busca" placeholder="Buscar Produto" aria-label="Buscar" value="<?= isset($_GET['busca']) ? htmlspecialchars($_GET['busca']) : '' ?>"/>
     <button class="btn btn-outline-success px-3" type="submit">
       <i class="bi bi-search"></i>
     </button>
     
     </form>
-    <a href="contato.php" class="btn-contato-mobile ms-2">
+    <a href="<?= $base ?>pages/contato.php" class="btn-contato-mobile ms-2">
     <i class="bi bi-whatsapp"></i>
       </a>
     </div>
@@ -65,7 +69,7 @@
 
 <div class="menu-nav text-center mb-3">
   <div class="mb-3">
-    <a href="produtos.php" class="btn btn-warning btn-lg fw-bold px-5 py-3 text-dark text-uppercase rounded-pill shadow-lg  btn-banner-home">
+    <a href="<?= $base ?>pages/produtos.php" class="btn btn-warning btn-lg fw-bold px-5 py-3 text-dark text-uppercase rounded-pill shadow-lg  btn-banner-home">
       🛒 VEJA NOSSO CATÁLOGO 
     </a>
   </div>
@@ -80,15 +84,15 @@
   <div class="container">
   <div class="categorias-nav mb-3 px-2">
     <div class="d-flex flex-wrap justify-content-center gap-2">
-    <a class="nav-link <?= ($cat_atual == 8) ? 'active' : '' ?>" href="produtos.php?categoria=8">Pecuária</a>
-    <a class="nav-link <?= ($cat_atual == 9) ? 'active' : '' ?>" href="produtos.php?categoria=9">Pet</a>
-    <a class="nav-link <?= ($cat_atual == 10) ? 'active' : '' ?>" href="produtos.php?categoria=10">Medicamentos</a>
-    <a class="nav-link <?= ($cat_atual == 11) ? 'active' : '' ?>" href="produtos.php?categoria=11">EPIs</a>
-    <a class="nav-link <?= ($cat_atual == 12) ? 'active' : '' ?>" href="produtos.php?categoria=12">Jardinagem</a>
-    <a class="nav-link <?= ($cat_atual == 13) ? 'active' : '' ?>" href="produtos.php?categoria=13">Aventura e Lazer</a>
-    <a class="nav-link <?= ($cat_atual == 14) ? 'active' : '' ?>" href="produtos.php?categoria=14">equipamentos</a>
-    <a class="nav-link <?= ($cat_atual == 15) ? 'active' : '' ?>" href="produtos.php?categoria=15">Vestuário</a>
-    <a class="nav-link <?= ($cat_atual == 16) ? 'active' : '' ?>" href="produtos.php?categoria=16">Outros</a>
+    <a class="nav-link <?= ($cat_atual == 8) ? 'active' : '' ?>" href="pages/produtos.php?categoria=8">Pecuária</a>
+    <a class="nav-link <?= ($cat_atual == 9) ? 'active' : '' ?>" href="pages/produtos.php?categoria=9">Pet</a>
+    <a class="nav-link <?= ($cat_atual == 10) ? 'active' : '' ?>" href="pages/produtos.php?categoria=10">Medicamentos</a>
+    <a class="nav-link <?= ($cat_atual == 11) ? 'active' : '' ?>" href="pages/produtos.php?categoria=11">EPIs</a>
+    <a class="nav-link <?= ($cat_atual == 12) ? 'active' : '' ?>" href="pages/produtos.php?categoria=12">Jardinagem</a>
+    <a class="nav-link <?= ($cat_atual == 13) ? 'active' : '' ?>" href="pages/produtos.php?categoria=13">Aventura e Lazer</a>
+    <a class="nav-link <?= ($cat_atual == 14) ? 'active' : '' ?>" href="pages/produtos.php?categoria=14">equipamentos</a>
+    <a class="nav-link <?= ($cat_atual == 15) ? 'active' : '' ?>" href="pages/produtos.php?categoria=15">Vestuário</a>
+    <a class="nav-link <?= ($cat_atual == 16) ? 'active' : '' ?>" href="pages/produtos.php?categoria=16">Outros</a>
       </div>
     </div>
   </div>

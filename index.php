@@ -55,7 +55,7 @@
                 <?=$produto['id_categoria'] ?>
               </p>
 
-          <a href="produto-detalhes.php?id=<?php echo $produto['id']; ?>" class="btn btn-success btn-sm w-100 fw-bold py-2 text-uppercase mt-auto stretched-link">Ver Produtos</a>
+          <a href="pages/produto-detalhes.php?id=<?php echo $produto['id']; ?>" class="btn btn-success btn-sm w-100 fw-bold py-2 text-uppercase mt-auto stretched-link">Ver Produtos</a>
           </div>
           </div>
           </div>
@@ -63,7 +63,7 @@
           </div>
 
           <div class="text-center my-5">
-            <a href="produtos.php" class="btn btn-outline-dark px-5 py-2 fw-bold text-uppercase">Ver mais produtos</a> 
+            <a href="pages/produtos.php" class="btn btn-outline-dark px-5 py-2 fw-bold text-uppercase">Ver mais produtos</a> 
           </div>
           </div>
             <div class="container my-5">

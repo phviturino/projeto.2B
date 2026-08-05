@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/includes/conexao.php';
+    require_once __DIR__ . '/../includes/conexao.php';
 
 function filtrarPorCategoria ($listaProdutos, $idCategoria) {
                 if(empty($listaProdutos) ||$idCategoria <= 0) {
@@ -52,7 +52,7 @@ function filtrarPorCategoria ($listaProdutos, $idCategoria) {
 
 ?>
 
-<?php include __DIR__ . '/includes/header.php';?>
+<?php include __DIR__ . '/../includes/header.php';?>
 
 <main class="container mt-5 mb-5">
     
@@ -76,7 +76,7 @@ function filtrarPorCategoria ($listaProdutos, $idCategoria) {
                     <div class="card h-100 shadow border-0 bg-dark text-white position-relative">
 
                         <div class="p-3 bg-white d-flex align-items-center justify-content-center container-foto-produto">
-                            <img src="img/<?php echo $linha_produto['imagem']; ?>" class="img-fluid foto-produto" alt="<?php echo $linha_produto['nome']; ?>">
+                            <img src="../img/<?php echo $linha_produto['imagem']; ?>" class="img-fluid foto-produto" alt="<?php echo $linha_produto['nome']; ?>">
                         </div>
 
                         <div class="card-body d-flex flex-column text-center rounded-pill">
@@ -105,4 +105,4 @@ function filtrarPorCategoria ($listaProdutos, $idCategoria) {
     </div>
 </main>
 
-<?php include_once __DIR__ . '/includes/footer.php';?>
+<?php include_once __DIR__ . '/../includes/footer.php';?>

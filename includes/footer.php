@@ -1,9 +1,13 @@
+<?php
+    $base = (basename($_SERVER['PHP_SELF']) === 'index.php') ? '' : '../';
+?>
+
 <footer class="bg-dark text-white pt-5 pb-3">
     <div class="container">
 
     <div class="row align-items-center mb-3">
     <div class="col-md-3">
-    <img src="img/lojaicone.jpeg" alt="icone" class="logo-footer rounded-circle w-100">
+    <img src="<?= $base ?>img/lojaicone.jpeg" alt="icone" class="logo-footer rounded-circle w-100">
     </div>
     <div class="col-md-9">
         <p class="text-secondary ms-3">Sua loja completa, dedicada ao cuidado, desde o seu pet até sua fazenda. 4 lojas oferecendo o melhor a nossos clientes.</p>
@@ -75,7 +79,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <img src="img-footer.png" class="img-footer" alt="Saúde animal">
+            <img src="<?= $base ?>img/img-footer.png" class="img-footer" alt="Saúde animal">
         </div>
 
     </div>
