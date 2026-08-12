@@ -20,7 +20,7 @@
 
       if($conexao) {
     
-      $sql = "SELECT * FROM produto WHERE id IN (65, 24, 72, 118, 32, 121, 122, 116) LIMIT 8"; 
+      $sql = "SELECT * FROM produto WHERE id IN (13, 68, 133, 161, 221, 254, 297, 338) LIMIT 8"; 
       $resultado = mysqli_query($conexao, $sql);
 
       if ($resultado && mysqli_num_rows($resultado) > 0) {
@@ -51,8 +51,8 @@
               <?=$produto['nome'] ?>
               </h5>
 
-              <p class="card-text text-secondary small mb-3">
-                <?=$produto['id_categoria'] ?>
+              <p class="card-text fw-bold fs-5 mt-auto mb-2 preço-produto">
+                R$ <?= number_format($produto['preço'],2, ',', '.'); ?>
               </p>
 
           <a href="pages/produto-detalhes.php?id=<?php echo $produto['id']; ?>" class="btn btn-success btn-sm w-100 fw-bold py-2 text-uppercase mt-auto stretched-link">Ver Produtos</a>

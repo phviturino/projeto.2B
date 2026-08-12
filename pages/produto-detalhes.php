@@ -8,7 +8,10 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $idProduto = (int)$_GET['id'];
 
     if($conexao){
-        $sql = "SELECT * FROM produto WHERE id = $idProduto";
+        $sql = "SELECT produto.*, categoria.nome AS categoria 
+        FROM produto 
+        LEFT JOIN categoria ON produto.id_categoria = categoria.id
+        WHERE produto.id = $idProduto";
         $resultado = mysqli_query($conexao, $sql);
 
         if ($resultado && mysqli_num_rows($resultado) > 0){
@@ -42,7 +45,7 @@ $numeroWhatsapp = "5544998514080";
         
         <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
             <span class="badge bg-secondary text-uppercase align-self-start mb-2 px-3 py-2 texto-pequeno">
-                Categoria #<?= $produtoEncontrado['nome']; ?>
+                Categoria <?= $produtoEncontrado['categoria']; ?>
             </span>
 
 
@@ -57,8 +60,6 @@ $numeroWhatsapp = "5544998514080";
                 <h3 class="text-dark fw-bold mb-1 fs-3">
                     R$ <?= number_format($produtoEncontrado['preço'], 2, ',', '.'); ?>
                 </h3> 
-
-                    //descrição do produto
 
     <div class="alert alert-light border p-3 mb-4 rounded-3 small text-muted">
         📌 <strong>Nota: </strong> Atualmente não realizamos vendas direto pelo site. Clique no botão abaixo para falar com um de nossos atendentes no whatsApp e garantir seu produto!
