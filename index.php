@@ -7,11 +7,11 @@
         <div class="container-fluid p-0 position-relative">
           <div class="row g-0">
             <div class="col-12">
-              <img src="img/banner.png" alt="banner" class="img-fluid w-100 h-75 rounded-2">
+              <img src="img/banner.png" alt="banner" class="img-fluid rounded-5">
             </div>
           </div>
         </div>
-      </div>
+      
 
        <?php
       require_once __DIR__ . '/includes/conexao.php';
@@ -30,9 +30,7 @@
     }
 }
 ?>
-
        <div class="container my-5">
-
         <div class="d-flex align-items-center justify-content-center mb-4 border-bottom pb-3">
           <h2 class="fw-bold m-0  fs-3 text-dark text-uppercase destaque-vendas">🔥 Mais vendidos</h2>
         </div>
@@ -66,13 +64,14 @@
             <a href="pages/produtos.php" class="btn btn-outline-dark px-5 py-2 fw-bold text-uppercase">Ver mais produtos</a> 
           </div>
           </div>
+
             <div class="container my-5">
               <div class="row align-items-center">
-
                 <div class="col-md-6">
-                  <h2>Conheça nossa história</h2>
-                  <p>Fundada em 2020, a Saúde Animal Agro e Vet nasceu do sonho de oferecer produtos de qualidade para o cuidado dos animais e para a agricultura. Com uma equipe apaixonada por animais e comprometida com a excelência, buscamos proporcionar a melhor experiência de compra para nossos clientes.</p>
-                  <p>Desde o início, nosso foco tem sido a satisfação do cliente, oferecendo uma ampla variedade de produtos que atendem às necessidades de cada animal e agricultor. Com quatro lojas físicas estrategicamente localizadas, estamos sempre prontos para atender nossos clientes com dedicação e profissionalismo.</p>
+                  <h2 class="fw-bold mb-3 text-start text-dark">Conheça nossa história</h2>
+                  <p class="text-start">Fundada em 2020, a Saúde Animal Agro e Vet nasceu do sonho de oferecer produtos de qualidade para o cuidado dos animais e para a agricultura. Com uma equipe apaixonada por animais e comprometida com a excelência, buscamos proporcionar a melhor experiência de compra para nossos clientes.</p>
+                  <p class="text-start">Desde o início, nosso foco tem sido a satisfação do cliente, oferecendo uma ampla variedade de produtos que atendem às necessidades de cada animal e agricultor.
+                  Com quatro lojas físicas estrategicamente localizadas, estamos sempre prontos para atender nossos clientes com dedicação e profissionalismo.</p>
 
       <div class="row mt-5 text-center">
 
