@@ -37,7 +37,7 @@ $base = (basename($_SERVER['PHP_SELF']) == 'index.php') ? '' : '../';
     <div class="col-md-6">
       <form action="<?= $base ?>pages/produtos.php" method="GET" class="d-flex busca" role="search">
       <input class="form-control me-2 w-100" type="search" name="busca" placeholder="Buscar" aria-label="Buscar" value="<?= isset($_GET['busca']) ? htmlspecialchars($_GET['busca']) : '' ?>"/>
-      <button class="btn btn-outline-success" type="submit">Buscar Produto</button>
+      <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
       </form>
     </div>
 
