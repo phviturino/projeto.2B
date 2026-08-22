@@ -6,6 +6,8 @@
         Todos os nossos produtos
     </h2>
 
+    <button id="btn-ordenar" class="btn btn-outline-dark mb-3">Ordenar de Z-a</button>
+     
     <div class="row row-cols-2 row-cols-md-4 g-4" id="lista-produtos">
         <!-- os cards vão ser inseridos aqui pelo TypeScript -->
     </div>

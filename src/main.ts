@@ -6,6 +6,7 @@ interface Produto {
     imagem: string,
     descricao: string
 }
+let produtosAtuais: Produto[] = [];
 
 async function buscarProduto(): Promise<Produto[]> {
     try {
@@ -46,8 +47,46 @@ function renderizarProdutos(produtos: Produto[]): void {
                 </div>
             </div>
         `;
-    });
-
+    }); 
     container.innerHTML = cardsHtml.join ("");
 }
 
+    function filtrarPorCategoria(produtos: Produto[], categoria: string | null) : Produto[] {
+        if (categoria === null ){
+            return produtos;
+        }
+        return produtos.filter((produto) =>{
+            return (produto.id_categoria === categoria)
+        })
+    }
+
+function ordenaPorNome(produtos: Produto[], crescente: boolean): Produto[] {
+    return produtos.sort((a, b) =>{
+        if (crescente) {
+            return a.nome.localeCompare(b.nome);
+        }else{
+            return b.nome.localeCompare(a.nome);
+        }
+    });
+}
+
+function configurarBotaoOrdenar (): void {
+    const botao = document.getElementById("btn-ordenar");
+    if (botao === null) {return; }
+    
+    botao.addEventListener("click", () => {
+        produtosAtuais = ordenaPorNome(produtosAtuais, false);
+        renderizarProdutos(produtosAtuais);
+    });
+}
+
+async function iniciar(): Promise<void> {
+    const produtos = await buscarProduto();
+    const params = new URLSearchParams(window.location.search);
+    const categoriaSelecionada = params.get("categoria");
+    const produtosFiltrados = filtrarPorCategoria(produtos, categoriaSelecionada);
+    produtosAtuais = ordenaPorNome(produtosFiltrados, true);
+    renderizarProdutos(produtosAtuais);
+    configurarBotaoOrdenar();
+}
+    iniciar();
