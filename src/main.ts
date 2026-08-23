@@ -29,6 +29,10 @@ function renderizarProdutos(produtos: Produto[]): void {
     if (container === null ) {
         return
     }
+    if (produtos.length === 0) {
+        container.innerHTML = '<p class="text-center text-muted">Nenhum produto encontrado.</p>';
+        return;
+    }
 
     const cardsHtml = produtos.map((produto) => {
         return `
@@ -80,11 +84,22 @@ function configurarBotaoOrdenar (): void {
     });
 }
 
+function calcularTotal(produtos: Produto[]) : number {
+    return produtos.reduce((soma, produto) =>{
+        return soma + parseFloat(produto.preço);
+        }, 0);
+}
+
 async function iniciar(): Promise<void> {
     const produtos = await buscarProduto();
     const params = new URLSearchParams(window.location.search);
     const categoriaSelecionada = params.get("categoria");
     const produtosFiltrados = filtrarPorCategoria(produtos, categoriaSelecionada);
+    const total = calcularTotal(produtosFiltrados);
+    const totalElemento = document.getElementById("total-categoria");
+    if (totalElemento !== null) {
+        totalElemento.textContent = `Valor total nesta categoria: R$ ${total.toFixed(2)}`;
+    }
     produtosAtuais = ordenaPorNome(produtosFiltrados, true);
     renderizarProdutos(produtosAtuais);
     configurarBotaoOrdenar();
