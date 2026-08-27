@@ -67,6 +67,7 @@ $base = (basename($_SERVER['PHP_SELF']) == 'index.php') ? '' : '../';
   </div>
 </nav>
 
+<?php if ($pagina_atual === 'index.php'): ?>
 <div class="menu-nav text-center mb-3">
   <div class="mb-3">
     <a href="<?= $base ?>pages/produtos.php" class="btn btn-warning btn-lg fw-bold px-5 py-3 text-dark text-uppercase rounded-pill shadow-lg  btn-banner-home">
@@ -76,8 +77,9 @@ $base = (basename($_SERVER['PHP_SELF']) == 'index.php') ? '' : '../';
 
   <hr class="w-50 mx-auto my-3 text-secondary">
 </div> 
+<?php endif; ?>
 
-<?php if ($pagina_atual !== 'index.php'): ?>
+<?php if ($pagina_atual === 'produtos.php'): ?>
 <?php
     $cat_atual = isset($_GET['categoria']) ? (int)$_GET['categoria'] : 0;
 ?>
