@@ -12,7 +12,7 @@ let produtosAtuais = [];
 function buscarProduto() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const resposta = yield fetch("../api/listar.php");
+            const resposta = yield fetch("../dashboard/api/listar.php");
             if (!resposta.ok) {
                 throw new Error("Falha ao buscar produtos");
             }

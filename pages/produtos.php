@@ -17,4 +17,4 @@
 
 <?php include_once __DIR__ . '/../includes/footer.php'; ?>
 
-<script src="../dist/main.js"></script>
+<script src="../dashboard/dist/main.js"></script>
