@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../includes/conexao.php';
+include __DIR__ . '/../includes/header.php';
 
 $sql = "SELECT * FROM categoria";
 $resultado = mysqli_query($conexao, $sql);
@@ -34,3 +35,5 @@ $resultado = mysqli_query($conexao, $sql);
         </tbody>
     </table>
 </main>
+
+<?php include_once __DIR__ . '/../includes/footer.php'; ?>
