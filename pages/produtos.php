@@ -6,6 +6,10 @@
         Todos os nossos produtos
     </h2>
 
+    <div class="d-flex flex-warp justify-content-center gap-2 mb-3" id="categorias-nav-links">
+        <!-- categorias -->
+    </div>
+
     <p id="total-categoria" class="fw-bold"></p> 
     <button id="btn-ordenar" class="btn btn-outline-dark mb-3">Ordenar de Z-a</button>
      

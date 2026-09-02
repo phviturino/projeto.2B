@@ -1,3 +1,39 @@
+interface Categoria {
+    id: string,
+    nome: string,
+    descricao: string
+}
+async function buscarCategorias(): Promise<Categoria[]> {
+    try {
+        const resposta = await fetch("../dashboard/api/categorias.php");
+        if (!resposta.ok) {
+            throw new Error("Falha ao buscar categorias");
+        }
+        const dados: Categoria[] = await resposta.json();
+        return dados;
+    } catch (erro) {
+        console.log("Erro ao buscar Categorias", erro);
+        return [];
+    }
+}
+function renderizarCategorias(categorias: Categoria[]): void {
+    const container = document.getElementById("categorias-nav-links");
+
+    if (container === null ) {
+        return
+    }
+    if (categorias.length === 0) {
+        container.innerHTML = '<p class="text-center text-muted">Nenhuma categoria encontrada.</p>';
+        return;
+    }
+
+    const linksHtml = categorias.map((categoria) => {
+        return `<a class="nav-link" href="produtos.php?categoria=${categoria.id}">${categoria.nome}</a>`;
+    }); 
+
+    container.innerHTML = linksHtml.join ("");
+}
+
 interface Produto {
     id: string,
     id_categoria: string,
@@ -92,6 +128,9 @@ function calcularTotal(produtos: Produto[]) : number {
 
 async function iniciar(): Promise<void> {
     const produtos = await buscarProduto();
+    const categorias = await buscarCategorias();
+    renderizarCategorias(categorias);
+
     const params = new URLSearchParams(window.location.search);
     const categoriaSelecionada = params.get("categoria");
     const produtosFiltrados = filtrarPorCategoria(produtos, categoriaSelecionada);

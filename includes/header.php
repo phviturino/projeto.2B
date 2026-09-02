@@ -83,21 +83,6 @@ $base = (basename($_SERVER['PHP_SELF']) == 'index.php') ? '' : '../';
 <?php
     $cat_atual = isset($_GET['categoria']) ? (int)$_GET['categoria'] : 0;
 ?>
-  <div class="container">
-  <div class="categorias-nav mb-3 px-2">
-    <div class="d-flex flex-wrap justify-content-center gap-2">
-    <a class="nav-link <?= ($cat_atual == 8) ? 'active' : '' ?>" href="<?= $base ?>pages/produtos.php?categoria=8">Pecuária</a>
-    <a class="nav-link <?= ($cat_atual == 9) ? 'active' : '' ?>" href="<?= $base ?>pages/produtos.php?categoria=9">Pet</a>
-    <a class="nav-link <?= ($cat_atual == 10) ? 'active' : '' ?>" href="<?= $base ?>pages/produtos.php?categoria=10">Medicamentos</a>
-    <a class="nav-link <?= ($cat_atual == 11) ? 'active' : '' ?>" href="<?= $base ?>pages/produtos.php?categoria=11">EPIs</a>
-    <a class="nav-link <?= ($cat_atual == 12) ? 'active' : '' ?>" href="<?= $base ?>pages/produtos.php?categoria=12">Jardinagem</a>
-    <a class="nav-link <?= ($cat_atual == 13) ? 'active' : '' ?>" href="<?= $base ?>pages/produtos.php?categoria=13">Aventura e Lazer</a>
-    <a class="nav-link <?= ($cat_atual == 14) ? 'active' : '' ?>" href="<?= $base ?>pages/produtos.php?categoria=14">equipamentos</a>
-    <a class="nav-link <?= ($cat_atual == 15) ? 'active' : '' ?>" href="<?= $base ?>pages/produtos.php?categoria=15">Vestuário</a>
-    <a class="nav-link <?= ($cat_atual == 16) ? 'active' : '' ?>" href="<?= $base ?>pages/produtos.php?categoria=16">Outros</a>
-      </div>
-    </div>
-  </div>
 </div>
 
 <?php endif;?>

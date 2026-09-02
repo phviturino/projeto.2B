@@ -8,6 +8,36 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+function buscarCategorias() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const resposta = yield fetch("../dashboard/api/categorias.php");
+            if (!resposta.ok) {
+                throw new Error("Falha ao buscar categorias");
+            }
+            const dados = yield resposta.json();
+            return dados;
+        }
+        catch (erro) {
+            console.log("Erro ao buscar Categorias", erro);
+            return [];
+        }
+    });
+}
+function renderizarCategorias(categorias) {
+    const container = document.getElementById("categorias-nav-links");
+    if (container === null) {
+        return;
+    }
+    if (categorias.length === 0) {
+        container.innerHTML = '<p class="text-center text-muted">Nenhuma categoria encontrada.</p>';
+        return;
+    }
+    const linksHtml = categorias.map((categoria) => {
+        return `<a class="nav-link" href="produtos.php?categoria=${categoria.id}">${categoria.nome}</a>`;
+    });
+    container.innerHTML = linksHtml.join("");
+}
 let produtosAtuais = [];
 function buscarProduto() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -90,6 +120,8 @@ function calcularTotal(produtos) {
 function iniciar() {
     return __awaiter(this, void 0, void 0, function* () {
         const produtos = yield buscarProduto();
+        const categorias = yield buscarCategorias();
+        renderizarCategorias(categorias);
         const params = new URLSearchParams(window.location.search);
         const categoriaSelecionada = params.get("categoria");
         const produtosFiltrados = filtrarPorCategoria(produtos, categoriaSelecionada);

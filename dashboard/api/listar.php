@@ -11,6 +11,6 @@
         $produto[] = $linha;
     }
 
-    echo json_encode($produto)
+    echo json_encode($produto);
 
 ?>
