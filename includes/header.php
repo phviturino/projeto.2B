@@ -74,17 +74,9 @@ $base = (basename($_SERVER['PHP_SELF']) == 'index.php') ? '' : '../';
       🛒 VEJA NOSSO CATÁLOGO 
     </a>
   </div>
-
+  
   <hr class="w-50 mx-auto my-3 text-secondary">
 </div> 
-<?php endif; ?>
-
-<?php if ($pagina_atual === 'produtos.php'): ?>
-<?php
-    $cat_atual = isset($_GET['categoria']) ? (int)$_GET['categoria'] : 0;
-?>
-</div>
-
 <?php endif;?>
 
 </header>
