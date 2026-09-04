@@ -25,7 +25,7 @@ $resultado = mysqli_query($conexao, $sql);
                 <tr>
                     <td><?php echo $linha['id']; ?></td>
                     <td><?php echo $linha['nome']; ?></td>
-                    <td><?php echo $linha['descrição']; ?></td>
+                    <td><?php echo $linha['descricao']; ?></td>
                     <td>
                         <a href="../editar/categoria.php?id=<?php echo $linha['id']; ?>" class="btn btn-warning btn-sm">Editar</a>
                         <a href="../excluir/categoria.php?id=<?php echo $linha['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>

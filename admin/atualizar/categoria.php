@@ -5,7 +5,7 @@ $id = $_POST['id'];
 $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
 $descricao = mysqli_real_escape_string($conexao, $_POST['descricao']);
 
-$sql = "UPDATE categoria SET nome = '$nome', descrição = '$descricao' WHERE id = '$id'";
+$sql = "UPDATE categoria SET nome = '$nome', descricao = '$descricao' WHERE id = '$id'";
 $resultado = mysqli_query($conexao, $sql);
 
 if (!$resultado) {

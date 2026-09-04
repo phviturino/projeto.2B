@@ -22,7 +22,7 @@ $categoria = mysqli_fetch_assoc($resultado);
 
     <div class="mb-3">
         <label for="descricao" class="form-label">Descrição</label>
-        <textarea class="form-control" id="descricao" name="descricao" required><?php echo $categoria['descrição']; ?></textarea>
+        <textarea class="form-control" id="descricao" name="descricao" required><?php echo $categoria['descricao']; ?></textarea>
     </div>
 
     <button type="submit" class="btn btn-success">Atualizar</button>
