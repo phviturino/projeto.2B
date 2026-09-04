@@ -16,8 +16,8 @@ $categoria = mysqli_fetch_assoc($resultado);
         <input type="hidden" name="id" value="<?php echo $categoria['id']; ?>">
 
     <div class="mb-3">
-        <label for="nome" class="form-label"></label>
-        <input type="text" class="form-control" id="nome" value="<?php echo $categoria['nome']; ?>" required> 
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $categoria['nome']; ?>" required> 
     </div>
 
     <div class="mb-3">
