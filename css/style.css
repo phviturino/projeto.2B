@@ -153,6 +153,9 @@ footer p{
     display: block;
     margin: 30px auto 0;
 }
+.descricao-limitada {
+    max-width: 250px;
+}
 
 @media (max-width: 768px) {
     .logo-img-mobile {
