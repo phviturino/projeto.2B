@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . '/../../includes/conexao.php';
+require_once __DIR__ . '/../../includes/conexao.php';
 include __DIR__ . '/../includes/header.php';
 
 $id = $_GET['id'];

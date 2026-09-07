@@ -4,7 +4,6 @@ include __DIR__ . '/../includes/header.php';
 
 $id = $_GET['id'];
 $fornecedor = mysqli_fetch_assoc(mysqli_query($conexao, "SELECT * FROM fornecedor WHERE id = $id"));
-
 ?>
 
 <main class="container mt-3 mb-5">

@@ -9,3 +9,4 @@ $sql = "INSERT INTO fornecedor (nome, telefone, email) VALUES ('$nome', '$telefo
 $resultado = mysqli_query($conexao, $sql);
 header("location:../listar/fornecedor.php");
 exit;
+?>
