@@ -33,12 +33,40 @@ $resultado = mysqli_query($conexao, $sql);
                 <td><?php echo $linha['categoria_nome']; ?></td>
                 <td>
                     <a href="../editar/produto.php?id=<?php echo $linha['id']; ?>" class="btn btn-warning">Editar</a>
-                    <a href="../excluir/produto.php?id=<?php echo $linha['id']; ?>" class="btn btn-danger">Excluir</a>
+                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalExcluir"
+                        data-id="<?php echo $linha['id']; ?>" data-nome="<?php echo htmlspecialchars($linha['nome']); ?>">
+                        Excluir
+                    </button>
                 </td>
             </tr>
             <?php endwhile; ?>
         </tbody>
     </table>
 </main>
+
+<div class="modal fade" id="modalExcluir" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmar Exclusão</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja excluir a categoria <strong id="nomeItemExcluir"></strong>? Essa ação não pode ser desfeita.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <a href="#" id="linkConfirmarExclusao" class="btn btn-danger">Sim, excluir</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('modalExcluir').addEventListener('show.bs.modal', function (event) {
+        var botao = event.relatedTarget;
+        document.getElementById('nomeItemExcluir').textContent = botao.getAttribute('data-nome');
+        document.getElementById('linkConfirmarExclusao').href = '../excluir/produto.php?id=' + botao.getAttribute('data-id');
+    });
+</script>
 
 <?php include_once __DIR__ . '/../includes/footer.php'; ?>

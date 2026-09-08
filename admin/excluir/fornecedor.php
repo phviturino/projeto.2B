@@ -3,11 +3,22 @@ require_once __DIR__ . '/../../includes/conexao.php';
 
 $id = $_GET['id'];
 
+$sqlCheck = "SELECT COUNT(*) AS total FROM fornecedor_produto WHERE id_fornecedor = '$id'";
+$resultadoCheck = mysqli_query($conexao, $sqlCheck);
+$check_produto = mysqli_fetch_assoc($resultadoCheck);
+
+if ($check_produto['total'] > 0) {
+    header("Location: ../listar/fornecedor.php?erro=fornecedor_em_uso");
+    exit;
+}
+
 $sql = "DELETE FROM fornecedor WHERE id = '$id'";
 $resultado = mysqli_query($conexao, $sql);
+
 if (!$resultado) {
     die("Erro no DELETE: " . mysqli_error($conexao));
 }
-header("location: ../listar/fornecedor.php");
+
+header("Location: ../listar/fornecedor.php?sucesso=fornecedor_excluido");
 exit;
 ?>
