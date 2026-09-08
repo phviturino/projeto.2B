@@ -126,6 +126,33 @@ function calcularTotal(produtos: Produto[]) : number {
         }, 0);
 }
 
+function categoriaDestaque(produtos: Produto[]): {categoria: string, total: number} | null {
+    const valorPorCategoria: { [categoria: string]: number } = {};
+
+    produtos.forEach((produto) => {
+        const categoria = produto.id_categoria;
+        const preco = parseFloat(produto.preço);
+
+        if (valorPorCategoria[categoria] === undefined) {
+            valorPorCategoria[categoria] = 0;
+        }
+        valorPorCategoria[categoria] += preco;
+    });
+
+    const categorias = Object.keys(valorPorCategoria);
+    if (categorias.length === 0) {
+        return null;
+    }
+
+    let categoriaVencedora = categorias[0];
+    categorias.forEach((categoria) => {
+        if (valorPorCategoria[categoria] > valorPorCategoria[categoriaVencedora]) {
+            categoriaVencedora = categoria;
+        }
+    });
+    return {categoria: categoriaVencedora, total: valorPorCategoria[categoriaVencedora]};
+}
+
 async function iniciar(): Promise<void> {
     const produtos = await buscarProduto();
     const categorias = await buscarCategorias();
@@ -135,6 +162,11 @@ async function iniciar(): Promise<void> {
     const categoriaSelecionada = params.get("categoria");
     const produtosFiltrados = filtrarPorCategoria(produtos, categoriaSelecionada);
     const total = calcularTotal(produtosFiltrados);
+    const destaque = categoriaDestaque(produtos);
+    const destaqueElemento = document.getElementById("categoria-destaque");
+    if (destaqueElemento !== null && destaque !== null) {
+        destaqueElemento.textContent = `Categoria em destaque: ${destaque.categoria} -  R$ ${destaque.total.toFixed(2)}`;
+    }
     const totalElemento = document.getElementById("total-categoria");
     if (totalElemento !== null) {
         totalElemento.textContent = `Valor total nesta categoria: R$ ${total.toFixed(2)}`;
