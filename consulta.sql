@@ -31,3 +31,23 @@ end if;
 end;
 
 update produto set preço = -50 where id = 334;
+
+DELIMITER $$
+	
+create procedure sp_produtos_destaque()
+begin
+    select * from produto where id in (13, 68, 133, 161, 221, 254, 297, 338) limit 8;
+end
+
+call sp_produtos_destaque();
+
+create function fn_preco_pix(preco decimal(10,2))
+returns decimal(10,2)
+deterministic
+begin
+	return preco * 0.95;
+end
+
+SELECT nome, preço as preco_original, fn_preco_pix(preço) AS preco_pix 
+FROM produto 
+where id = 67;
