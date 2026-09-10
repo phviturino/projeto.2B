@@ -20,7 +20,7 @@
 
       if($conexao) {
     
-      $sql = "SELECT * FROM produto WHERE id IN (13, 68, 133, 161, 221, 254, 297, 338) LIMIT 8"; 
+      $sql = "CALL sp_produtos_destaque()"; 
       $resultado = mysqli_query($conexao, $sql);
 
       if ($resultado && mysqli_num_rows($resultado) > 0) {
