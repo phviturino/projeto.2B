@@ -134,7 +134,7 @@ function filtrarPorCategoria(produtos, categoria) {
         return produtos;
     }
     return produtos.filter((produto) => {
-        return (produto.id_categoria === categoria);
+        return (String(produto.id_categoria) === categoria);
     });
 }
 function ordenaPorNome(produtos, crescente) {
@@ -192,9 +192,9 @@ function iniciar() {
         const categoriaSelecionada = params.get("categoria");
         categoriaAtual = categoriaSelecionada;
         const produtos = yield buscarProduto(categoriaSelecionada, "", 1);
-        const produtosCategoria = yield buscarTodosProdutos(categoriaSelecionada);
-        const total = calcularTotal(produtosCategoria);
         const todosProdutos = yield buscarTodosProdutos(null);
+        const produtosCategoria = filtrarPorCategoria(todosProdutos, categoriaSelecionada);
+        const total = calcularTotal(produtosCategoria);
         const destaque = categoriaDestaque(todosProdutos);
         const destaqueElemento = document.getElementById("categoria-destaque");
         if (destaqueElemento !== null && destaque !== null) {
