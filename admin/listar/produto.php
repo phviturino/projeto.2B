@@ -52,7 +52,7 @@ $resultado = mysqli_query($conexao, $sql);
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
             </div>
             <div class="modal-body">
-                <p>Tem certeza que deseja excluir a categoria <strong id="nomeItemExcluir"></strong>? Essa ação não pode ser desfeita.</p>
+                <p>Tem certeza que deseja excluir o produto <strong id="nomeItemExcluir"></strong>? Essa ação não pode ser desfeita.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

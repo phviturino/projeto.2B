@@ -39,10 +39,20 @@ function renderizarCategorias(categorias) {
     container.innerHTML = linksHtml.join("");
 }
 let produtosAtuais = [];
-function buscarProduto() {
+let paginaAtual = 1;
+let categoriaAtual = null;
+function buscarProduto(categoria, busca, pagina) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const resposta = yield fetch("../dashboard/api/listar.php");
+            const params = new URLSearchParams();
+            if (categoria !== null) {
+                params.append("categoria", categoria);
+            }
+            if (busca !== "") {
+                params.append("busca", busca);
+            }
+            params.append("pagina", pagina.toString());
+            const resposta = yield fetch(`../dashboard/api/listar.php?${params.toString()}`);
             if (!resposta.ok) {
                 throw new Error("Falha ao buscar produtos");
             }
@@ -53,6 +63,41 @@ function buscarProduto() {
             console.log("Erro ao buscar Produtos", erro);
             return [];
         }
+    });
+}
+function buscarTodosProdutos(categoria) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let todos = [];
+        let pagina = 1;
+        let continuar = true;
+        while (continuar) {
+            const pagina_produtos = yield buscarProduto(categoria, "", pagina);
+            if (pagina_produtos.length === 0) {
+                continuar = false;
+            }
+            else {
+                todos = todos.concat(pagina_produtos);
+                pagina = pagina + 1;
+            }
+        }
+        return todos;
+    });
+}
+function carregarMaisProdutos() {
+    return __awaiter(this, void 0, void 0, function* () {
+        paginaAtual = paginaAtual + 1;
+        const maisProdutos = yield buscarProduto(categoriaAtual, "", paginaAtual);
+        produtosAtuais = produtosAtuais.concat(maisProdutos);
+        renderizarProdutos(produtosAtuais);
+    });
+}
+function configurarBotaoCarregarMais() {
+    const botao = document.getElementById("btn-carregar-mais");
+    if (botao === null) {
+        return;
+    }
+    botao.addEventListener("click", () => {
+        carregarMaisProdutos();
     });
 }
 function renderizarProdutos(produtos) {
@@ -74,7 +119,7 @@ function renderizarProdutos(produtos) {
                     <div class="card-body d-flex flex-column text-center rounded-pill">
                         <h5 class="card-title fs-6 text-uppercase mb-2 nome-produto">${produto.nome}</h5>
                         <p class="card-text fw-bold fs-5 mt-auto mb-2 preço-produto">
-                            R$ ${produto.preço}
+                            R$ ${parseFloat(produto.preço).toFixed(2)}
                         </p>
                         <a href="produto-detalhes.php?id=${produto.id}" class="btn btn-success btn-sm w-100 fw-bold py-2 text-uppercase stretched-link">Ver Produtos</a>
                     </div>
@@ -141,25 +186,30 @@ function categoriaDestaque(produtos) {
 }
 function iniciar() {
     return __awaiter(this, void 0, void 0, function* () {
-        const produtos = yield buscarProduto();
         const categorias = yield buscarCategorias();
         renderizarCategorias(categorias);
         const params = new URLSearchParams(window.location.search);
         const categoriaSelecionada = params.get("categoria");
-        const produtosFiltrados = filtrarPorCategoria(produtos, categoriaSelecionada);
-        const total = calcularTotal(produtosFiltrados);
-        const destaque = categoriaDestaque(produtos);
+        categoriaAtual = categoriaSelecionada;
+        const produtos = yield buscarProduto(categoriaSelecionada, "", 1);
+        const produtosCategoria = yield buscarTodosProdutos(categoriaSelecionada);
+        const total = calcularTotal(produtosCategoria);
+        const todosProdutos = yield buscarTodosProdutos(null);
+        const destaque = categoriaDestaque(todosProdutos);
         const destaqueElemento = document.getElementById("categoria-destaque");
         if (destaqueElemento !== null && destaque !== null) {
-            destaqueElemento.textContent = `Categoria em destaque: ${destaque.categoria} -  R$ ${destaque.total.toFixed(2)}`;
+            const categoriaEncontrada = categorias.find((c) => c.id === destaque.categoria);
+            const nomeCategoria = categoriaEncontrada !== undefined ? categoriaEncontrada.nome : destaque.categoria;
+            destaqueElemento.textContent = `Categoria em destaque: ${nomeCategoria} - R$ ${destaque.total.toFixed(2)}`;
         }
         const totalElemento = document.getElementById("total-categoria");
         if (totalElemento !== null) {
             totalElemento.textContent = `Valor total nesta categoria: R$ ${total.toFixed(2)}`;
         }
-        produtosAtuais = ordenaPorNome(produtosFiltrados, true);
+        produtosAtuais = ordenaPorNome(produtos, true);
         renderizarProdutos(produtosAtuais);
         configurarBotaoOrdenar();
+        configurarBotaoCarregarMais();
     });
 }
 iniciar();

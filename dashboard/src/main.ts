@@ -71,6 +71,24 @@ async function buscarProduto(categoria: string | null, busca: string, pagina: nu
     }
 }
 
+async function buscarTodosProdutos(categoria: string | null): Promise<Produto[]> {
+    let todos: Produto[] = [];
+    let pagina = 1;
+    let continuar = true;
+
+    while (continuar) {
+        const pagina_produtos = await buscarProduto(categoria, "", pagina);
+        if (pagina_produtos.length === 0) {
+            continuar = false;
+        } else {
+            todos = todos.concat(pagina_produtos);
+            pagina = pagina + 1;
+        }
+    }
+
+    return todos;
+}
+
     async function carregarMaisProdutos(): Promise<void> {
         paginaAtual = paginaAtual + 1;
         const maisProdutos = await buscarProduto(categoriaAtual, "", paginaAtual);
@@ -107,7 +125,7 @@ function renderizarProdutos(produtos: Produto[]): void {
                     <div class="card-body d-flex flex-column text-center rounded-pill">
                         <h5 class="card-title fs-6 text-uppercase mb-2 nome-produto">${produto.nome}</h5>
                         <p class="card-text fw-bold fs-5 mt-auto mb-2 preço-produto">
-                            R$ ${produto.preço}
+                            R$ ${parseFloat(produto.preço).toFixed(2)}
                         </p>
                         <a href="produto-detalhes.php?id=${produto.id}" class="btn btn-success btn-sm w-100 fw-bold py-2 text-uppercase stretched-link">Ver Produtos</a>
                     </div>
@@ -187,20 +205,27 @@ async function iniciar(): Promise<void> {
     const params = new URLSearchParams(window.location.search);
     const categoriaSelecionada = params.get("categoria");
     categoriaAtual = categoriaSelecionada;
-    const produtos = await buscarProduto(categoriaSelecionada, "", 1);
-    const produtosFiltrados = produtos;
     
-    const total = calcularTotal(produtosFiltrados);
-    const destaque = categoriaDestaque(produtos);
+    const produtos = await buscarProduto(categoriaSelecionada, "", 1);
+    const produtosCategoria = await buscarTodosProdutos(categoriaSelecionada);
+    const total = calcularTotal(produtosCategoria);
+
+    const todosProdutos = await buscarTodosProdutos(null);
+    const destaque = categoriaDestaque(todosProdutos);
+
     const destaqueElemento = document.getElementById("categoria-destaque");
     if (destaqueElemento !== null && destaque !== null) {
-        destaqueElemento.textContent = `Categoria em destaque: ${destaque.categoria} -  R$ ${destaque.total.toFixed(2)}`;
+        const categoriaEncontrada = categorias.find((c) => c.id === destaque.categoria);
+        const nomeCategoria = categoriaEncontrada !== undefined ? categoriaEncontrada.nome : destaque.categoria;
+        destaqueElemento.textContent = `Categoria em destaque: ${nomeCategoria} - R$ ${destaque.total.toFixed(2)}`;
     }
+
     const totalElemento = document.getElementById("total-categoria");
     if (totalElemento !== null) {
         totalElemento.textContent = `Valor total nesta categoria: R$ ${total.toFixed(2)}`;
     }
-    produtosAtuais = ordenaPorNome(produtosFiltrados, true);
+
+    produtosAtuais = ordenaPorNome(produtos, true);
     renderizarProdutos(produtosAtuais);
     configurarBotaoOrdenar();
     configurarBotaoCarregarMais();

@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../../includes/conexao.php';
 
-$id = $_GET['id'];
+$id = mysqli_real_escape_string($conexao, $_GET['id']);
 
 $sqlCheck = "SELECT COUNT(*) AS total FROM fornecedor_produto WHERE id_fornecedor = '$id'";
 $resultadoCheck = mysqli_query($conexao, $sqlCheck);

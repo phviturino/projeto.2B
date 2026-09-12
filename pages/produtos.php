@@ -18,6 +18,10 @@
         <!-- cards -->
     </div>
 
+    <div class="text-center mt-4">
+        <button id="btn-carregar-mais" class="btn btn-success">Ver mais produtos</button>
+    </div>
+
 </main>
 
 <?php include_once __DIR__ . '/../includes/footer.php'; ?>
