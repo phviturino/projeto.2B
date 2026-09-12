@@ -43,10 +43,21 @@ interface Produto {
     descricao: string
 }
 let produtosAtuais: Produto[] = [];
+let paginaAtual = 1;
+let categoriaAtual: string | null = null;
 
-async function buscarProduto(): Promise<Produto[]> {
+async function buscarProduto(categoria: string | null, busca: string, pagina: number): Promise<Produto[]> {
     try {
-        const resposta = await fetch("../dashboard/api/listar.php");
+        const params = new URLSearchParams();
+        if (categoria !== null) {
+            params.append("categoria", categoria);
+        }
+        if (busca !== "") {
+            params.append("busca", busca);
+        }
+            params.append("pagina", pagina.toString());
+        
+        const resposta = await fetch(`../dashboard/api/listar.php?${params.toString()}`);
 
         if (!resposta.ok) {
             throw new Error("Falha ao buscar produtos");
@@ -59,6 +70,22 @@ async function buscarProduto(): Promise<Produto[]> {
         return[];
     }
 }
+
+    async function carregarMaisProdutos(): Promise<void> {
+        paginaAtual = paginaAtual + 1;
+        const maisProdutos = await buscarProduto(categoriaAtual, "", paginaAtual);
+        produtosAtuais = produtosAtuais.concat(maisProdutos);
+        renderizarProdutos(produtosAtuais);
+    }
+
+    function configurarBotaoCarregarMais(): void {
+    const botao = document.getElementById("btn-carregar-mais");
+    if (botao === null) { return; }
+    botao.addEventListener("click", () => {
+        carregarMaisProdutos();
+    });
+}
+
 function renderizarProdutos(produtos: Produto[]): void {
     const container = document.getElementById("lista-produtos");
 
@@ -154,13 +181,15 @@ function categoriaDestaque(produtos: Produto[]): {categoria: string, total: numb
 }
 
 async function iniciar(): Promise<void> {
-    const produtos = await buscarProduto();
     const categorias = await buscarCategorias();
     renderizarCategorias(categorias);
 
     const params = new URLSearchParams(window.location.search);
     const categoriaSelecionada = params.get("categoria");
-    const produtosFiltrados = filtrarPorCategoria(produtos, categoriaSelecionada);
+    categoriaAtual = categoriaSelecionada;
+    const produtos = await buscarProduto(categoriaSelecionada, "", 1);
+    const produtosFiltrados = produtos;
+    
     const total = calcularTotal(produtosFiltrados);
     const destaque = categoriaDestaque(produtos);
     const destaqueElemento = document.getElementById("categoria-destaque");
@@ -174,5 +203,6 @@ async function iniciar(): Promise<void> {
     produtosAtuais = ordenaPorNome(produtosFiltrados, true);
     renderizarProdutos(produtosAtuais);
     configurarBotaoOrdenar();
+    configurarBotaoCarregarMais();
 }
     iniciar();
