@@ -200,11 +200,11 @@ function iniciar() {
         if (destaqueElemento !== null && destaque !== null) {
             const categoriaEncontrada = categorias.find((c) => c.id === destaque.categoria);
             const nomeCategoria = categoriaEncontrada !== undefined ? categoriaEncontrada.nome : destaque.categoria;
-            destaqueElemento.textContent = `Categoria em destaque: ${nomeCategoria} - R$ ${destaque.total.toFixed(2)}`;
+            destaqueElemento.textContent = `${nomeCategoria} - R$ ${destaque.total.toFixed(2)}`;
         }
         const totalElemento = document.getElementById("total-categoria");
         if (totalElemento !== null) {
-            totalElemento.textContent = `Valor total nesta categoria: R$ ${total.toFixed(2)}`;
+            totalElemento.textContent = `R$ ${total.toFixed(2)}`;
         }
         produtosAtuais = ordenaPorNome(produtos, true);
         renderizarProdutos(produtosAtuais);

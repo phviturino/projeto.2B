@@ -1,6 +1,4 @@
-<?php
-$base = (basename($_SERVER['PHP_SELF']) == 'index.php') ? '' : '../';
-?>
+<?php $base = (basename($_SERVER['PHP_SELF']) == 'index.php') ? '' : '../'; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -44,8 +42,8 @@ $base = (basename($_SERVER['PHP_SELF']) == 'index.php') ? '' : '../';
     <div class="col-md-3 d-md-block">
         <div class="d-flex align-items-center justify-content-end info-contato">
         <a href="<?= $base ?>pages/contato.php" class="btn-contato">
-        <i class="bi bi-whatsapp"></i>
-        Fale conosco
+          <i class="bi bi-whatsapp"></i>
+          Fale conosco
         </a>
     </div>
         </div>
