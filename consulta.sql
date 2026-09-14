@@ -1,5 +1,3 @@
-use saudeanimal
-
 create view vw_produto_detalhado as
 with contagem_fornecedores as (
 	select id_produto, count(*) as total_fornecedores
@@ -17,8 +15,6 @@ select
 	left join contagem_fornecedores on produto.id = contagem_fornecedores.id_produto;
 
 select * from vw_produto_detalhado;
-
-drop trigger if exists trg_produto_preco_positivo;
 
 create trigger trg_produto_preco_positivo
 before update on produto
@@ -40,6 +36,25 @@ begin
 end
 
 call sp_produtos_destaque();
+
+DELIMITER $$
+CREATE PROCEDURE sp_listar_produtos(
+    IN p_categoria INT,
+    IN p_busca VARCHAR(100),
+    IN p_limite INT,
+    IN p_offset INT
+)
+BEGIN
+    SELECT produto.*, categoria.nome AS categoria_nome
+    FROM produto
+    JOIN categoria ON produto.id_categoria = categoria.id
+    WHERE (p_categoria IS NULL OR produto.id_categoria = p_categoria)
+      AND (p_busca IS NULL OR produto.nome LIKE CONCAT('%', p_busca, '%'))
+    LIMIT p_limite OFFSET p_offset;
+END $$
+DELIMITER ;
+
+CALL sp_listar_produtos(NULL, NULL, 10, 0);
 
 create function fn_preco_pix(preco decimal(10,2))
 returns decimal(10,2)
