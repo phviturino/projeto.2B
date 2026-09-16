@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../verificar.php';
 require_once __DIR__ . '/../../includes/conexao.php';
 
 $id = $_POST['id'];

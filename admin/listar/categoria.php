@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../verificar.php';
 require_once __DIR__ . '/../../includes/conexao.php';
 include __DIR__ . '/../includes/header.php';
 
@@ -38,7 +39,7 @@ $resultado = mysqli_query($conexao, $sql);
                 <tr>
                     <td><?php echo $linha['id']; ?></td>
                     <td><?php echo $linha['nome']; ?></td>
-                    <td><?php echo $linha['descricao']; ?></td>
+                    <td><?php echo $linha['descrição']; ?></td>
                     <td>
                         <a href="../editar/categoria.php?id=<?php echo $linha['id']; ?>" class="btn btn-warning btn-sm">Editar</a>
                         <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalExcluir"

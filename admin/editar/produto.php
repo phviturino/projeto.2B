@@ -1,4 +1,5 @@
-<?php 
+<?php
+require_once __DIR__ . '/../verificar.php';
 require_once __DIR__ . '/../../includes/conexao.php';
 include __DIR__ . '/../includes/header.php';
 

@@ -1,5 +1,6 @@
 <?php
-    include __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../verificar.php';
+include __DIR__ . '/../includes/header.php';
 ?>
 
 <main class="container mt-5 mb-5">
